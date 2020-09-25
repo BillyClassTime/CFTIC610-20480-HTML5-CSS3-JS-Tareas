@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+    
+</head> 
+<body>
+<br><br><br>
+<hr>
+<h1>EJERCICIO 28</h1>
+<hr>
+<p>Escriba un programa JavaScript para encontrar si los miembros de una matriz dada de enteros es una permutación de números de 1 a un entero dado.</p>
+<br>
+<br>
+<p>Por favor, teclea un entero del 1 al 9.</p>
+<form id="frm28">
+    <label for="num28">Número del 1 al 9:</label>
+    <input type="number" id="num28" name="num28" min="1" max="9"><br><br>
+    <input type="button" onclick="myfun28()" value="Comprobar permutación">
+</form>
+<br><br>
+<p>RESULTADO</p>
+<br><br>
+<p id="res28"></p>
+<script>
+    // EJERCICIO 28 José Vicente Tejero
+    function myfun28() {
+        var array28 = [1, 3, 2, 4, 5, 7, 9];
+        var i,z;
+        entr28 = document.getElementById("num28").value;
+        totalCoincidencias = 0;
+        for (i = 1; i < entr28 + 1; i++) {
+           for (z = 0; z < array28.length; z++) {
+                if (z == array28[z]) {
+                   totalCoincidencias = totalCoincidencias + 1;
+                   break;   
+                 }
+            }
+         }     
+         if (totalCoincidencias >= entr28) {
+             document.getElementById("res28").innerHTML = "La matriz es una permutación de la cadena de entrada";     
+         }
+         else {
+             document.getElementById("res28").innerHTML = "La matriz NO es una permutación de la cadena de entrada";     
+         }
+    }
+</script>
+</body> 
+<!-- ------------------------------------------------------------------------------------------- -->
+<head>
+        <title> JAVASCRIPT EJERCICIO 29</title>
+</head> 
+<body>
+    <br><br><br>
+    <hr>
+    <h1>EJERCICIO 29</h1>
+    <hr>
+    <!-- EJERCICIO 29 - José Vicente Tejero -->
+    <p>  Escriba un programa JavaScript para crear el valor de NOR de dos valores booleanos dados. <br>
+         Nota: En la lógica booleana, la negación lógica o conjunta es un operador funcional de verdad <br>
+         que produce un resultado que es la negación de la lógica o. Es decir, una oración de la forma (p NOR q) <br>
+         es verdadera precisamente cuando ni p ni q son verdaderas, es decir, cuando tanto p como q son falsas<br>
+         Ejemplo de muestra: Para x = verdadero e y = falso, la salida debe ser lógica_Nor (x, y) = falso; <br>
+         Para x = falso e y = falso, la salida debe ser lógica_Nor (x, y) = verdadera.</p>
+    <p id="enun29"></p>
+    <br>
+    <p>Por favor, teclea T (True) o F (False/Falso) y pulse el boton calcular NOR:</p>
+    <form id="frm29">
+        <label for="bool1">Booleano 1 (T o F):</label>
+        <input type="text" id="bool1" name="bool1"><br><br>
+        <label for="bool2">Booleano 2 (T o F):</label>
+        <input type="text" id="bool2" name="bool2"><br><br>
+        <input type="button" onclick="myfun29()" value="Calcular NOR">
+        <!-- <input type="button" onclick="function29()" value="Submit">  -->
+    </form>
+    <br><br>
+    <p>RESULTADO</p>
+    <p id ="res29"></p>
+    <script>
+        function myfun29() {
+            var x29, y29, text29
+            x29 = document.getElementById("bool1").value;
+            y29 = document.getElementById("bool2").value;
+            if (x29 == "F" && y29 =="F") {
+            text29 = "El resultado del NOR es CIERTO";
+            } 
+            else {
+            text29 = "El resultado del NOR es FALSO";
+            }
+            document.getElementById("res29").innerHTML = text29;
+            // return;
+        }
+    </script>
+</body>
+<!-- ------------------------------------------------------------------------------------------- -->
+    <head>
+            <title> JAVASCRIPT EJERCICIO 30</title>
+    </head> 
+    <body>
+        <br><br><br>
+        <hr>
+        <h1>EJERCICIO 30</h1>
+        <hr>
+        <p>Escriba un programa JavaScript para encontrar la cadena más larga de una matriz dada.</p>
+        <p id="enun30"></p>
+        <br>
+        <p>RESULTADO</p>
+        <p id="res30"></p>
+    <script>
+        // EJERCICIO 30 José Vicente Tejero
+        var cars = ["Saab", "Volvo", "BMW", "Ferrary", "Mercedes", "Lamborgini"];
+        document.getElementById("enun30").innerHTML = "Matriz de cadenas: "+ cars.toString();
+        var i;
+        var cad_long = 0;        /*  Guarda longitud de la última cadena más larga */
+        var cad_masLarga = "";    /*  Guarda el nombre de la última cadena más larga */
+        /* for (i = 0; i < cars.length; i++) {
+        
+            if (cars[i].length > cad_long) { 
+               cad_long = cars[i].length;
+               cad_masLarga = cars[i]
+            }
+        }     */
+        /* cars.forEach((x)=>{
+            if (x.length > cad_long) { 
+               cad_long = x.length;
+               cad_masLarga =x
+            }
+        }) ;  */
+        cars.forEach((x)=>{
+            cad_masLarga = x.length > cad_long ? x : cad_masLarga;
+            cad_long = x.length > cad_long ? x.length : cad_long;
+         }) ; 
+        document.getElementById("res30").innerHTML = cad_masLarga + " es la cadena más larga con " + cad_long + " posiciones.";      
+    </script>
+    </body>
+</html>
+<!-- ------------------------------------------------------------------------------------------- -->
+<head>
+    <title> JAVASCRIPT EJERCICIO 31</title>
+</head> 
+<body>
+<br><br><br>
+<hr>
+<h1>EJERCICIO 31</h1>
+<hr>
+<p>```	Escriba un programa JavaScript para obtener el mayor número par de una matriz de enteros.</p>
+<p id="enun31"></p>
+<br>
+<p>RESULTADO</p>
+<br><br>
+<p id="res31"></p>
+<script>
+    // EJERCICIO 31 José Vicente Tejero
+    var num31 = [15, 17, 33, 44, 6, 9, 88, 39];
+    var i;
+    var numMayor31 = 0;    /*  Guarda el número mayor */
+    for (i = 0; i < num31.length; i++) {
+         // 
+         //if (( (num31[i]-(num31[i]/2)) == 0) && (num31[i] > numMayor29))
+         if ((num31[i]%2 == 0) && (num31[i] > numMayor31))
+         { 
+          numMayor31 = num31[i];
+        }
+    }     
+    document.getElementById("res31").innerHTML = numMayor31 + " es el mayor número par de la matriz de enteros.";   
+</script>
+</body>
+</html>
+<!-- ------------------------------------------------------------------------------------------- -->
+<head>
+    <title> JAVASCRIPT EJERCICIO 32</title>
+</head> 
+<body>
+<br><br><br>
+<hr>
+<h1>EJERCICIO 32</h1>
+<hr>
+<p>Escriba un programa JavaScript para invertir el orden de los bits en un entero dado. <br>
+    56 -> 111000 después de retroceso 7 -> 111 234 -> 11101010 después de retroceso 87 -> 1010111</p>
+<form name="form1" action="" method="post" onSubmit="">
+      Decimal:  <input type="text" id="dec32" name="dec32"><br>
+      Binario:  <input type="text" id="bin32" name="bin32"><br>
+      Invertido:<input type="text" id="inv32" name="inv32"><br>
+      <input type="button" value="Convertir a binario" onClick="bin32.value=dec2bin(dec32.value);">
+      <input type="button" value="Invertir orden" onClick="inv32.value=inversion(bin32.value);"> 
+</form>
+<p id="demo"></p>
+<p>RESULTADO</p>
+<br><br>
+<p id="res32"></p>
+<script>
+    // EJERCICIO 32 José Vicente Tejero
+    // str_in = document.getElementById("bin32").value;
+    function dec2bin(i) { 
+        return (i<1)?"":dec2bin((i-(i%2))/2)+i%2; 
+    }
+    function inversion(text32) {
+        var str_out="";
+        // text32 = document.getElementById("bin32").value;
+        for (i = 0; i < text32.length; i++) {
+            // str_out.substr(text32.length-1, 1) = str_in.substr(i, 1);
+            str_out = text32.charAt(i) + str_out;
+        }
+        num32 = parseInt(str_out,2);
+        str_out = num32.toString(2);    
+        return str_out;
+    }       
+    // document.getElementById("res32").innerHTML = inversion();
+</script>
+</body>
+</html>
+<!-- ------------------------------------------------------------------------------------------- -->
+<head>
+    <title> JAVASCRIPT EJERCICIO 33</title>
+</head> 
+<body>
+<br><br><br>
+<hr>
+<h1>EJERCICIO 33</h1>
+<hr>
+<!-- EJERCICIO 33 - José Vicente Tejero -->
+<p> Escriba un programa JavaScript para encontrar el número redondeado más pequeño que no sea menor que un valor dado.<br> 
+    Nota: Un número redondo se considera informalmente como un número entero que termina con uno o más ceros. <br>
+    [3] Entonces, 590 es más redondo que 592, pero 590 es menos redondo que 600.</p>
+<p id="enun33"></p>
+<br>
+<p>Por favor, teclea un número entero y pulse el boton calcular el número redondeado:</p>
+<form id="frm33">
+    <label for="num33">Teclea un entero:</label>
+    <input type="number" id="num33" name="num33"  min="1"><br><br>
+    <input type="button" onclick="myfun33()" value="Calcular Redondo">
+    <!-- <input type="button" onclick="function33()" value="Submit">  -->
+</form>
+<br><br>
+<p>RESULTADO</p>
+<p id ="res33"></p>
+<script>
+    function myfun33() {
+        var x33=0;
+        var text33;
+        x33 = document.getElementById("num33").value;
+        x33++;
+        while ((x33%10) != 0) {
+            x33++;
+        }
+        document.getElementById("res33").innerHTML = "El primer número redondeado no menor es: " + x33;
+    }
+</script>
+</body>
+<!-- ------------------------------------------------------------------------------------------- -->
+<head>
+    <title> JAVASCRIPT EJERCICIO 34</title>
+</head> 
+<body>
+<br><br><br>
+<hr>
+<h1>EJERCICIO 34</h1>
+<hr>
+<!-- EJERCICIO 34 - José Vicente Tejero -->
+<p> Escriba un programa JavaScript para encontrar el número primo más pequeño estrictamente mayor que un número dado.</p>
+<p id="enun34"></p>
+<br>
+<p>Por favor, teclea un número entero y pulse el boton calcular el número primo inmediatamente mayor:</p>
+<form id="frm34">
+    <label for="num34">Teclea un entero:</label>
+    <input type="number" id="num34" name="num34"  min="1"><br><br>
+    <input type="button" onclick="myfun34()" value="Calcular número primo">
+    <!-- <input type="button" onclick="function33()" value="Submit">  -->
+</form>
+<br><br>
+<p>RESULTADO</p>
+<p id ="res34"></p>
+<script>
+    function primo(p34) {
+        for (divisor = 2; divisor < p34; divisor++) { 
+                if((p34%divisor) == 0) {
+                    return false;
+                }    
+        } 
+        return p34;
+    }
+    function myfun34() {
+        var x34;
+        var text34;
+        x34 = document.getElementById("num34").value;
+        x34++;  // siguiente número mayor que el dado
+        while (true) {
+            if (primo(x34) != false) {
+                res34 = primo(x34);
+                break;
+            }
+            else {
+                x34++;
+            }
+        }
+        document.getElementById("res34").innerHTML = "El primer número primo mayor es: " + x34;
+    }
+</script>
+<!-- ------------------------------------------------------------------------------------------- -->
+<head>
+    <title> JAVASCRIPT EJERCICIO 35</title>
+</head> 
+<br><br><br>
+
+</body>
+<!-- EJERCICIO 35 - José Vicente Tejero -->
+<hr>
+<h1>EJERCICIO 35</h1>
+<hr>
+<p> Escriba un ejercicio de JavaScript para crear una variable con un nombre definido por el usuario.</p>
+<p id="enun35"></p>
+<br>
+<p>Por favor, teclea un nombre</p>
+<form id="frm35">
+    <label for="text35">Teclea un nombre:</label>
+    <input type="text" id="text35" name="num35"><br><br>
+    <input type="button" onclick="myfun35()" value="Teclea nombre para variable">
+    <!-- <input type="button" onclick="function33()" value="Submit">  -->
+</form>
+<br><br>
+<p>RESULTADO</p>
+<p id ="res35"></p>
+<script>
+        function myfun35() {
+             var x35;
+             x35 = document.getElementById("text35").value;
+             eval("var "+x35+"=2");
+             document.getElementById("res35").innerHTML = "Se ha creado la variable: " + x35 + " y su valor es " + eval(x35);
+        }
+</script>
+</body>
+<!-- ------------------------------------------------------------------------------------------- -->
+<head>
+    <title> JAVASCRIPT EJERCICIO 36</title>
+</head> 
+<body>
+<br><br><br>
+<hr>
+<h1>EJERCICIO 36</h1>
+<hr>
+<!-- EJERCICIO 36 - José Vicente Tejero -->
+<p> Escriba un programa JavaScript para encontrar el número de dígitos pares en un entero dado.</p>
+<p id="enun36"></p>
+<br><br><br>
+<p>Por favor, teclea un número entero y pulsa el boton para calcular el número de dígitos pares:</p>
+<form id="frm36">
+    <label for="num36">Teclea un entero:</label>
+    <input type="number" id="num36" name="num36"  min="1"><br><br>
+    <input type="button" onclick="myfun36()" value="Calcular número de pares">
+   <br><br>
+<p>RESULTADO</p>
+<p id ="res36"></p>
+<script>
+    function myfun36() {
+        var x36 = 0;
+        var cont36 = 0;
+        // var text36 ="";
+        var a36;
+        x36 = document.getElementById("num36").value;
+        var text36 = x36.toString();
+        // cont36 = 0;
+        for (i = 0; i < text36.length; i++) {
+            a36 = parseInt(text36.substr(i, 1), 10);
+            if (a36%2 == 0) {
+                cont36 = cont36 + 1;
+            }
+        }
+        document.getElementById("res36").innerHTML = "El número de dígitos pares es: " + cont36;
+    }
+</script>
+</body>
+<!-- ------------------------------------------------------------------------------------------- -->
+<head>
+    <title> JAVASCRIPT EJERCICIO 37</title>
+</head> 
+<body>
+<br><br><br>
+<hr>
+<h1>EJERCICIO 37</h1>
+<hr>
+<!-- EJERCICIO 37 - José Vicente Tejero -->
+<p> Escriba un programa JavaScript para crear una matriz de sumas de prefijos de la matriz dada. <br>
+    NOTA: En informática, el prefijo suma, suma acumulativa, exploración inclusiva o simplemente exploración<br>
+    de una secuencia de números x0, x1, x2, ... es una segunda secuencia de números y0, y1, y2, ..., <br>
+    las sumas de prefijos de la secuencia de entrada: y0 = x0 y1 = x0 + x1 y2 = x0 + x1 + x2 …	</p>
+<p id="enun37"></p>
+<br><br><br>
+
+<p>RESULTADO</p>
+<p id ="res37"></p>
+<script>
+    var num37 = [15, 17, 33, 44, 6, 9, 88, 39];
+    var sal37 = [0, 0, 0, 0, 0, 0, 0, 0];
+    var i;
+    sal37[0] = num37[0];
+    cadenaSalida = sal37[0] + " = " + num37[0] + "<br>";
+    for (i = 1; i < num37.length; i++) {
+        sal37[i] = sal37[i-1] + num37[i];
+    }     
+   // for (i = 1; i < num37.length; i++) {
+   //    
+   
+   // }   
+   // document.getElementById("res37").innerHTML = sal37[0]+ " = " + num37[0] + "<br>";
+   document.getElementById("res37").innerHTML =  num37.toString()+ "<br>";
+   document.getElementById("res37").innerHTML += sal37.toString();
+</script>
+</body>

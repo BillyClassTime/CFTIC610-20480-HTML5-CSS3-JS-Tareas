@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> JAVASCRIPT EJERCICIO 30</title>
+    </head>
+    <body>
+        <hr>
+        <h1>EJERCICIO 30</h1>
+        <hr>
+        <p>Escriba un programa JavaScript para encontrar la cadena más larga de una matriz dada.</p>
+        <p id="enun30"></p>
+        <br>
+        <p>RESULTADO</p>
+        <p id="res30"></p>
+    <script>
+        // EJERCICIO 30 José Vicente Tejero
+        var cars = ["Saab", "Volvo", "BMW", "Ferrary", "Mercedes", "Lamborgini"];
+        document.getElementById("enun30").innerHTML = "Matriz de cadenas: "+ cars.toString();
+        var i;
+        var cad_long = 0;        /*  Guarda longitud de la última cadena más larga */
+        var cad_masLarga = "";    /*  Guarda el nombre de la última cadena más larga */
+        /* for (i = 0; i < cars.length; i++) {
+        
+            if (cars[i].length > cad_long) { 
+               cad_long = cars[i].length;
+               cad_masLarga = cars[i]
+            }
+        }     */
+        /* cars.forEach((x)=>{
+            if (x.length > cad_long) { 
+               cad_long = x.length;
+               cad_masLarga =x
+            }
+        }) ;  */
+        cars.forEach((x)=>{
+            cad_masLarga = x.length > cad_long ? x : cad_masLarga;
+            cad_long = x.length > cad_long ? x.length : cad_long;
+         }) ; 
+        document.getElementById("res30").innerHTML = cad_masLarga + " es la cadena más larga con " + cad_long + " posiciones.";      
+    </script>
+    </body>
+</html>

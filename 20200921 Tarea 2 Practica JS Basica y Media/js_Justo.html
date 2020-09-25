@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> JAVASCRIPT EJERCICIOS 18 al 27</title>
+    </head>
+    <body>
+        <hr>
+        <h1>EJERCICIO 18 (Justo Garrido)</h1>
+        <hr>
+        <p>Escriba un programa JavaScript para verificar si una cadena dada representa una oración correcta o no. Una cadena se considera una oración 
+            correcta si comienza con una letra mayúscula y termina con un punto (.).		R:114</p>
+        <p id="enun18"></p>
+        <br>
+        <p><strong>RESULTADO PRUEBAS</strong></p>
+        <p id="res18"></p>
+        <script>
+            // EJERCICIO 18 Justo Garrido
+            function ej18_cadenaCorrecta(cad) {
+                return cad && cad.endsWith(".") && cad.charAt(0) === cad.charAt(0).toUpperCase();
+                // ojo, para algunos idiomas podría ser necesario usar toLocaleUpperCase() en lugar de toUpperCase
+            }
+            var arrayCadenas = ["Esta es una cadena correcta.", "esta no es una cadena correcta.", "Esta no es una cadena correcta", "esta no es una cadena correcta", "Ñam ñam, esta es una cadena correcta.", "Ávila es una ciudad y esta es una cadena correcta.", "ándale, esta no es una cadena correcta.","", null, undefined];
+            document.getElementById("enun18").innerHTML = "Matriz de cadenas: "+ arrayCadenas.toString();
+            arrayCadenas.forEach((x)=>document.getElementById("res18").innerHTML += ej18_cadenaCorrecta(x) ? "Correcta: " + x + "<br>" : "Incorrecta: " + x + "<br>") ; 
+        </script>
+    
+        <hr>
+        <h1>EJERCICIO 19 (Justo Garrido)</h1>
+        <hr>
+        <p>Escriba un programa JavaScript para verificar si una matriz es una matriz diagonal o no. En álgebra lineal, una matriz diagonal es una matriz en la que las 
+            entradas fuera de la diagonal principal son todas cero (la diagonal de la parte superior izquierda a la inferior derecha). 
+            Ejemplo: [1, 0, 0], [0, 2, 0], [0, 0, 3]]) = verdadero [1, 0, 0], [0, 2, 3], [0, 0, 3]]) = falso		R:115</p>
+        <p id="enun19"></p>
+        <br>
+        <p><strong>RESULTADO</strong></p>
+        <p id="res19"></p>
+        <script>
+            // EJERCICIO 19 Justo Garrido
+            function ej19_matrizATablaHTML(arr) {
+                let html = "<table>";
+                arr.forEach((fila) =>{
+                    html += "<tr>";    
+                    fila.forEach((celda) => html += "<td>" + celda + "</td>");
+                    html += "</tr>";    
+                });
+                html += "</table>";
+                return html;
+            }
+            function ej19_esMatrizDiagonal(arr) {
+                for (fila=0; fila < arr.length; fila++) {
+                    for (colu=0; colu < arr[fila].length; colu++) {
+                        if (fila != colu && arr[fila][colu] != 0 ) return false;
+                    }
+                }
+                return true;
+            }
+
+            var array1 = [[1, 0, 0], [0, 2, 0], [0, 0, 3]];
+            var array2 = [[1, 0, 0], [0, 2, 3], [0, 0, 3]];
+            document.getElementById("enun19").innerHTML = "Array1: " + ej19_matrizATablaHTML(array1) + "<br>Array2: " + ej19_matrizATablaHTML(array2);
+            document.getElementById("res19").innerHTML = "Array1 es diagonal: " + ej19_esMatrizDiagonal(array1) + "<br>Array2 es diagonal: " + ej19_esMatrizDiagonal(array2);
+        </script>
+
+        <hr>
+        <h1>EJERCICIO 20 (Justo Garrido)</h1>
+        <hr>
+        <p>Escriba un programa JavaScript para encontrar todas las opciones posibles para reemplazar el hash en una cadena (consta de dígitos y 
+            un hash (#)) con un dígito para producir un número entero divisible por 3. Para una cadena "2 * 0", la salida debe ser: ["210", "240", "270"]		R:116</p>
+        <p id="enun20"></p>
+        <br>
+        <p><strong>RESULTADO</strong></p>
+        <p id="res20"></p>
+        <script>
+            // EJERCICIO 20 Justo Garrido
+            function ej20_cambiarHash(cad) {
+                // Primero limpiamos la cadena de espacios en blanco y signos diferentes al * y h:
+                let cad2 = cad.replace(/[^0-9#\*]/g,"");
+                // Sumamos los decimales:
+                let suma = 0;
+                for (i =0; i< cad2.length; i++) {
+                    let c = cad2.charAt(i);
+                    if (c >= 0 && c <= 9) suma += parseInt(c, 10);
+                };
+                resultado = [];
+                // Miramos que cifras dan modulo 3 = 0, y las pone en la cadena de entrada y añade en el array resultado:
+                for (i=0; i<=9; i++) {
+                    if ( (suma + i) % 3 == 0 ) resultado.push(cad2.replace(/[#\*]/g, i));
+                }
+                return resultado;
+            }
+            var arrayCadenas = ["2 * 0", "100#", "1234*"];
+            document.getElementById("enun20").innerHTML = "Matriz de cadenas: "+ arrayCadenas.toString();
+            arrayCadenas.forEach((x)=>document.getElementById("res20").innerHTML += x + " cambia a: " + ej20_cambiarHash(x).toString() + "<br>"); 
+        </script>
+
+        <hr>
+        <h1>EJERCICIO 21 (Justo Garrido)</h1>
+        <hr>
+        <p>Escriba un programa JavaScript para verificar si una matriz dada es una matriz de identidad. Nota: En álgebra lineal, la matriz identidad, o algunas veces 
+            ambiguamente llamada matriz unitaria, de tamaño n es n? n matriz cuadrada con unos en la diagonal principal y ceros en el 
+            resto. [[1, 0, 0], [0, 1, 0], [0, 0, 1]] -> verdadero [[1, 0, 0], [0, 1, 0], [1, 0, 1]] -> falso		R:117</p>
+        <p id="enun21"></p>
+        <br>
+        <p><strong>RESULTADO</strong></p>
+        <p id="res21"></p>
+        <script>
+            // EJERCICIO 21 Justo Garrido
+            function ej21_esMatrizIdentidad(arr) {
+                for (fila=0; fila < arr.length; fila++) {
+                    for (colu=0; colu < arr[fila].length; colu++) {
+                        if (fila != colu && arr[fila][colu] != 0 ) return false;
+                        if (fila == colu && arr[fila][colu] != 1 ) return false;
+                    }
+                }
+                return true;
+            }
+            var array1 = [[1, 0, 0], [0, 2, 0], [0, 0, 3]];
+            var array2 = [[1, 0, 0], [0, 1, 0], [0, 0, 1]];
+            document.getElementById("enun21").innerHTML = "Array1: " + ej19_matrizATablaHTML(array1) + "<br>Array2: " + ej19_matrizATablaHTML(array2);
+            document.getElementById("res21").innerHTML = "Array1 es identidad: " + ej21_esMatrizIdentidad(array1) + "<br>Array2 es identidad: " + ej21_esMatrizIdentidad(array2);
+        </script>
+
+        <hr>
+        <h1>EJERCICIO 22 (Justo Garrido)</h1>
+        <hr>
+        <p>Escriba un programa JavaScript para verificar si un número dado está en un rango determinado.		R:118</p>
+        <p id="enun22"></p>
+        <br>
+        <p><strong>RESULTADO</strong></p>
+        <p id="res22"></p>
+        <script>
+            // EJERCICIO 22 Justo Garrido
+            function ej22_numeroEnRango(num, iniRango, finRango) {
+                return iniRango <= num && num <= finRango;
+            }
+            var array1 = [[14, 0, 10], [15, 0, 20], [20, 30, 40]];
+            array1.forEach( (arr) => document.getElementById("enun22").innerHTML += "Valor: " + arr[0] + ", inicio rango: " + arr[1] + ", fin rango: " + arr[2] + "<br>");
+            array1.forEach( (arr) => document.getElementById("res22").innerHTML += "Valor: " + arr[0] + ", inicio rango: " + arr[1] + ", fin rango: " + arr[2] 
+            + ( ej22_numeroEnRango(arr[0], arr[1], arr[2]) ? " DENTRO DE RANGO " : " FUERA DE RANGO " ) + "<br>");
+        </script>
+
+        <hr>
+        <h1>EJERCICIO 23 (Justo Garrido)</h1>
+        <hr>
+        <p>Escriba un programa JavaScript para verificar si un entero dado tiene una secuencia de dígitos creciente.		R:119</p>
+        <p id="enun23"></p>
+        <br>
+        <p><strong>RESULTADO</strong></p>
+        <p id="res23"></p>
+        <script>
+            // EJERCICIO 23 Justo Garrido
+            function ej23_digitosCrecientes(num) {
+                cad = num.toString();
+                for (i = 1; i < cad.length; i++) {
+                    if (cad[i-1] > cad[i]) return false;
+                };
+                return true;
+            }
+            var array1 = [12345, 123, 567, 100, 8765];
+            array1.forEach( (num) => document.getElementById("enun23").innerHTML += "Valor: " + num + "<br>");
+            array1.forEach( (num) => document.getElementById("res23").innerHTML += "Valor: " + num.toString() 
+            + ( ej23_digitosCrecientes(num) ? " DIGITOS CRECIENTES " : " DIGITOS NO CRECIENTES " ) + "<br>");
+        </script>
+
+
+        <hr>
+        <h1>EJERCICIO 24 (Justo Garrido)</h1>
+        <hr>
+        <p>Escriba un programa JavaScript para obtener la URL del sitio web (página de carga).		R:12</p>
+        <p id="enun24"></p>
+        <br>
+        <p><strong>RESULTADO</strong></p>
+        <p id="res24"></p>
+        <script>
+            // EJERCICIO 24 Justo Garrido
+            document.getElementById("res24").innerHTML = document.location;
+        </script>
+
+        <hr>
+        <h1>EJERCICIO 25 (Justo Garrido)</h1>
+        <hr>
+        <p>Escriba un programa JavaScript para comprobar si un punto se encuentra estrictamente dentro de un círculo dado. Entrada: Centro del 
+            círculo (x, y) Radio del círculo: r Apunta dentro de un círculo (a, b)		R:120</p>
+        <p id="enun25"></p>
+        <br>
+        <p><strong>RESULTADO</strong></p>
+        <p id="res25"></p>
+        <script>
+            // EJERCICIO 25 Justo Garrido
+            function ej25_dentroCirculo(x_punto, y_punto, x_centro, y_centro, radio) {
+                return (Math.pow(x_punto - x_centro, 2) + Math.pow(y_punto - y_centro, 2)) < Math.pow(radio, 2);
+            }
+            var array1 = [2, 2, 1, 1, 3];
+            var array2 = [2, 2, 1, 1, 1];
+            document.getElementById("enun25").innerHTML = "Punto: (" + array1[0] + ", " + array1[1] + "); Centro: (" + array1[2] + ", " + array1[3] + "), radio: " + array1[4] + "<br>";
+            document.getElementById("enun25").innerHTML += "Punto: (" + array2[0] + ", " + array2[1] + "); Centro: (" + array2[2] + ", " + array2[3] + "), radio: " + array2[4] + "<br>";
+            document.getElementById("res25").innerHTML = "Punto: (" + array1[0] + ", " + array1[1] + "); Centro: (" + array1[2] + ", " + array1[3] + "), radio: " + array1[4] 
+            + ( ej25_dentroCirculo(...array1) ? " DENTRO DEL CIRCULO " : " FUERA DEL CIRCULO " ) + "<br>";
+            document.getElementById("res25").innerHTML += "Punto: (" + array2[0] + ", " + array2[1] + "); Centro: (" + array2[2] + ", " + array2[3] + "), radio: " + array2[4] 
+            + ( ej25_dentroCirculo(...array2) ? " DENTRO DEL CIRCULO " : " FUERA DEL CIRCULO " ) + "<br>";
+        </script>
+
+        <hr>
+        <h1>EJERCICIO 26 (Justo Garrido)</h1>
+        <hr>
+        <p>Escriba un programa JavaScript para verificar si una matriz dada es triangular inferior o no. Nota: Una matriz cuadrada se llama triangular inferior si 
+            todas las entradas sobre la diagonal principal son cero.		R:121</p>
+        <p id="enun26"></p>
+        <br>
+        <p><strong>RESULTADO</strong></p>
+        <p id="res26"></p>
+        <script>
+            // EJERCICIO 26 Justo Garrido
+            function ej26_esMatrizTriangular(arr) {
+                for (fila=0; fila < arr.length; fila++) {
+                    for (colu=fila+1; colu < arr[fila].length; colu++) {
+                        if (arr[fila][colu] != 0 ) return false;
+                    }
+                }
+                return true;
+            }
+
+            var array1 = [[1, 0, 1], [1, 2, 0], [1, 0, 3]];
+            var array2 = [[1, 0, 0], [1, 1, 0], [1, 1, 1]];
+            document.getElementById("enun26").innerHTML = "Array1: " + ej19_matrizATablaHTML(array1) + "<br>Array2: " + ej19_matrizATablaHTML(array2);
+            document.getElementById("res26").innerHTML = "Array1 es triangular inferior: " + ej26_esMatrizTriangular(array1) + "<br>Array2 es triangular inferior: " + ej26_esMatrizTriangular(array2);
+        </script>
+
+        <hr>
+        <h1>EJERCICIO 27 (Justo Garrido)</h1>
+        <hr>
+        <p>Escriba un programa JavaScript para verificar si una matriz dada de enteros representa una secuencia estrictamente creciente o estrictamente decreciente.		R:122</p>
+        <p id="enun27"></p>
+        <br>
+        <p><strong>RESULTADO</strong></p>
+        <p id="res27"></p>
+        <script>
+            // EJERCICIO 27 Justo Garrido
+            function ej27_esCrecienteODecreciente(arr) {
+                var creciente = true;
+                var decreciente = true;
+                var anterior;
+                return arr.every((num) => {
+                    // Si se usa forEach, el bucle no se detiene. Si se quiere acabar el bucle antes de tratar todos los elementos se puede usar every() o some().
+                    //      ojo: en jQuery > el .each probablemente sí detenga el bucle.
+                    //      con every, se tiene que devoler true mientras se quiera seguir iterando.
+                    if (anterior == undefined) {
+                        anterior = num
+                    } else {
+                        if (creciente && (anterior > num)) creciente = false;
+                        if (decreciente && (anterior < num)) decreciente = false;
+                        anterior = num;
+                    }
+                    return creciente || decreciente; // con every el bucle se finaliza al hacer return false. En ese caso every devuelve false. Si no every devuelve true.
+                });
+            }
+            var array1 = [1,2,3,4,3,6,7,8];
+            var array2 = [7,6,5,4,3,2,1];
+            document.getElementById("enun27").innerHTML = "Array1: " + array1.toString() + "<br>Array2: " + array2.toString();
+            document.getElementById("res27").innerHTML = "Array1 es estrictamente creciente o decreciente: " + ej27_esCrecienteODecreciente(array1) + "<br>Array2 es estrictamente creciente o decreciente: " + ej27_esCrecienteODecreciente(array2);
+        </script>  
+    </body>
+</html>
