@@ -4,3 +4,9 @@ Tareas y prácticas entregables y evaluables referentes al Modulo 20480 Programm
 Contenido de las carpetas:
 
 - 20200921 Tarea 2 Practica JS Basica y Media : práctica de JS realizada en grupo como tarea 2.
+- 20200924 Tarea 5 MOC 20480 (Módulos del 4 al 7)  :  
+
+   - MOD 5: Resolución de Instructions\20480C_MOD04_DEMO.md : ver: 
+   	Captura de pantalla con el resultado: "41252 20480C_MOD04_DEMO_Captura01.png"
+  Solucion: carpeta "41253 Exercise 2"
+   - 
