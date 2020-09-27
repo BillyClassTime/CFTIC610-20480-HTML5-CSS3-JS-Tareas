@@ -10,4 +10,6 @@ Contenido de las carpetas:
     - MOD 6: 20480C_MOD06_DEMO.md. Lección 2: Styling Block Elements
 - 20200925 Tarea 6 Laboratorios 5, 6 y 7 (20480) :
     - Laboratorio MOD - 5.md : 20480C_MOD05_LAK.md (entero).
+    - Laboratorio MOD - 6.md : 20480C_MOD06_LAK.md (entero).
+    - Laboratorio MOD -7.md : 20480C_MOD07_LAK.md (entero).
 
