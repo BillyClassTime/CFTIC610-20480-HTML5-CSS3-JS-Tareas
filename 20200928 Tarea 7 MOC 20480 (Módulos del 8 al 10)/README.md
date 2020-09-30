@@ -20,7 +20,7 @@
       2. **Evidencias capturas de pantalla en carpeta**: **MOD8 Capturas**. ( ruta: ...\CFTIC610-20480-HTML5-CSS3-JS-Tareas\20200928 Tarea 7 MOC 20480 (Módulos del 8 al 10)\MOD 8 Capturas)
       3. **Explicación de las capturas**:
          
-         1. ![](.\MOD 8 Capturas\Less 4 - Demo A debug JS - Set Break - Step 8.png)
+         1. ![](MOD 8 Capturas\Less 4 - Demo A debug JS - Set Break - Step 8.png)
          
             ​										Creación de breakpoint.
          
