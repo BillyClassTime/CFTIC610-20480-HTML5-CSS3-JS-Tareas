@@ -15,4 +15,5 @@ Contenido de las carpetas:
     - Laboratorio MOD - 5.md : 20480C_MOD05_LAK.md (entero).
     - Laboratorio MOD - 6.md : 20480C_MOD06_LAK.md (entero).
     - Laboratorio MOD -7.md : 20480C_MOD07_LAK.md (entero).
+- 20201005 Rev Preg Ex : revisión de las respuestas de los exámenes de certificación.
 
