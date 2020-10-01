@@ -8,16 +8,16 @@
       3. **Laboratorios Módulo 10**: Fichero de Instrucciones: Instructions\20480C_MOD010_LAK.md (entero)
    2. **Objetivos**: 
       1. Utilización de drag and drop desde un fichero externo hacia el navegador. Visualización de vídeos y sus controles de reproducción. Obtener localización geográfica y calcular distancia.
-      2. ¡¡¡
+      2. Hacer que la aplicación funcione en offline. Guardar información en localstorage, por ejemplo para usarla ofline.
       3. V¡¡¡.
    3. **Pasos**: 
       1. Creación de elemento y el tratamiento de los eventos correspondientes, la solución utilizó clases JS. Utilización de la etiqueta <video> de HTML5 y eventos de JS para controlar la carga y reproducción. Utilización de JS de geolocalización.
-      2. D¡¡¡.
+      2. Utilizar appcache.manifest, añadir eventos de detección de paso a online y offline, activar offline en los html. Utilizar programación que escribe y recupera de localStorage. Verificar recargando con el servidor IIS parado y viendo que vuelve a aparecer la información guardada.
       3. D¡¡¡.
 4. **Dificultad o problemas presentados y como se resolvieron:** 
    
-   1. **Observación**: solo se substituye la imagen en el navegador y no se envía al servidor. **Dificultad** de versiones: No se podía ver el vídeo en Edge (v44.19041.423.0), pero sí en Chrome y en Firefox. **Dificultad** de configuración de Windows: ha sido necesario tamibén dar permisos de acceso a la ubicación a nivel de Windows.
-   3. N¡¡¡.
+   1. **Observación**: solo se substituye la imagen en el navegador y no se envía al servidor. **Dificultad** de versiones: No se podía ver el vídeo en Edge (v44.19041.423.0), pero sí en Chrome y en Firefox. **Dificultad** de configuración de Windows: ha sido necesario tambIén dar permisos de acceso a la ubicación a nivel de Windows.
+   3. Sin dificultades especiales.
    3. ¡¡¡.
 5. **Detalles de la entrega:**
    
