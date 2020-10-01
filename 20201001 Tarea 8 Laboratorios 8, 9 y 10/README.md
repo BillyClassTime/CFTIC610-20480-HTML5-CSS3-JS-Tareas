@@ -20,4 +20,4 @@
 5. **Detalles de la entrega:**
    1. **Laboratorios**
       1. **Proyectos modificados** : ver carpetas "**MOD * Proyectos**". ( ruta: ...\CFTIC610-20480-HTML5-CSS3-JS-Tareas\20201001 Tarea 8 Laboratorios 8, 9 y 10\MOD * Proyectos)
-      2. **Evidencias capturas de pantalla en carpetas**: **MOD * Capturas**. ( ruta: ...\CFTIC610-20480-HTML5-CSS3-JS-Tareas\20201001 Tarea 8 Laboratorios 8, 9 y 10\MOD * Capturas)
+      2. **Evidencias capturas de pantalla en carpetas**: **MOD * Capturas**. ( ruta: ...\CFTIC610-20480-HTML5-CSS3-JS-Tareas\20201001 Tarea 8 Laboratorios 8, 9 y 10\MOD * Capturas).
