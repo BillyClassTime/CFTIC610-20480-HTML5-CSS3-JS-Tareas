@@ -21,5 +21,8 @@ Contenido de las carpetas:
     - 20480C_MOD08_LAK.md
     - 20480C_MOD09_LAK.md
     - 20480C_MOD010_LAK.md
+- 20201001 Tarea 9 MOC 20480 (Módulos del 11 y 12)
+    - 20480C_MOD011_DEMO.md
+    - 20480C_MOD012_DEMO.md
 - 20201005 Rev Preg Ex : revisión de las respuestas de los exámenes de certificación.
 
