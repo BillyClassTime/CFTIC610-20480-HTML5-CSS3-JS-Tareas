@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTION 4</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+</head>
+
+<body>
+    <article>
+        <p>DRAG DROP</p>
+        <p>You are developing a form that captures a user's email address by using HTML5 and jQuery.
+            The form must capture the email address and return it as a query string parameter. The query string
+            parameter must display the @ symbol that is used in the email address.
+            You need to implement this functionality.
+            How should you develop the form?
+        <p>
+            (To answer, drag the appropriate code segment to the correct target or
+            targets in the answer area. Each code segment may be used once, more than once, or not at all. You may
+            need to drag the split bar between panes or scroll to view content.)</p>
+        </p>
+        <p>
+            <xmp>
+                code segment 1 : str=$("form").serialize(); // SELECCIONADO EN SOLUCION
+                code segment 2 : str=decodeURIComponent(str); // SELECCIONADO EN SOLUCION
+                code segment 3 : str=$("form").contents.toString(); // DESCARTADO EN SOLUCION
+                code segment 4 : str=$("form").toLocaleString(); // DESCARTADO EN SOLUCION
+                code segment 5 : str=decodeURI(str); // DESCARTADO EN SOLUCION
+
+                <form>
+                    <input type="text" name="email" />
+                    <input type="submit" value="Submit" />
+                </form>
+                <script>
+                    $("form").submit(function () {
+                        ---------> VIENEN AQUI
+                        return true;
+                    });
+                </script>
+            </xmp>
+        </p>
+    </article>
+    <section>
+        <form>
+            <input type="text" name="email" value="usuario@dominio.com"/>
+            <input type="submit" value="Submit" />
+        </form>
+        <script>
+            $("form").submit(function () {
+                // code segment 1 : str=$("form").serialize();          // Posible: https://api.jquery.com/serialize/                                                               SELECCIONADO EN SOLUCION
+                // code segment 2 : str=decodeURIComponent(str);        // Descartado por ser la operación inversa: https://www.w3schools.com/jsref/jsref_decodeuricomponent.asp    SELECCIONADO EN SOLUCION
+                // code segment 3 : str=$("form").contents.toString();  // Descartado por incluir nodos tipos texto: https://api.jquery.com/contents/                                   DESCARTADO EN SOLUCION
+                // code segment 4 : str=$("form").toLocaleString();     // Descartado por tratar aspectos de localizacion: https://www.w3schools.com/JSREF/jsref_tolocalestring.asp     DESCARTADO EN SOLUCION
+                // code segment 5 : str=decodeURI(str);                 // Descartado por ser la operación inversa: https://www.w3schools.com/jsref/jsref_decodeuri.asp                 DESCARTADO EN SOLUCION
+                alert("Primero evaluamos las expresiones que toman valores del formulario y lo pasan a str")
+                alert('1 : $("form").serialize()=' + $("form").serialize());
+                alert('3 : $("form").contents.toString()=' + $("form").contents.toString());
+                alert('4 : $("form").toLocaleString()=' + $("form").toLocaleString());
+                alert("Mejor el 1. Ahora miramos las expresiones que tratan str (2 y 5)");
+                var str = $("form").serialize();
+                alert('2 : decodeURIComponent(str)=' + decodeURIComponent(str));
+                alert('5 : decodeURI(str)=' + decodeURI(str));
+                alert("Mejor el 2 pues hace que vuelva a aparecer la @ en str. Otra cosa es que esto sea una situación real o una pregunta retorcida.");
+                return true;
+            });
+        </script>
+    </section>
+
+    <article>
+        <p>
+        <pre>
+Respuesta:
+Section: Volume A
+Explanation/Reference:
+* The serialize() method creates a URL encoded text string by serializing form values.
+You can select one or more form elements (like input and/or text area),or the form element itself.
+The serialized values can be used in the URL query string when making an AJAX request.
+Example: $("form").serialize());
+* decodeURIComponent
+The decodeURIComponent() function decodes a URI component.
+Return Value:A String,representing the decoded URI
+Reference: jQuery serialize() Method
+http://www.w3schools.com/jquery/ajax_serialize.asp
+http://www.w3schools.com/jsref/jsref_encodeuri.asp
+    
+Ver también:  https://webmasters.stackexchange.com/questions/498/which-special-characters-are-safe-to-use-in-url
+OBSERVACION: Hay que tener en cuenta que el JS termina yendo dentro del form y por eso $("form").contents devuelve "basura".
+
+
+</pre>
+        </p>
+    </article>
+</body>
+
+</body>
+
+</html>

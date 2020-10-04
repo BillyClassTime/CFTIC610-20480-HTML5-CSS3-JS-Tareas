@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <title>QUESTION 292</title>
+</head>
+
+<body>
+    <h1>¿POSIBLE SOLUCION ERRONEA? </h1>
+    <article>
+        <p>
+            <pre>
+            DRAG DROP
+            You are developing a page by using HTML5 and CSS3.
+            You need to ensure that the page meets the following requirements:
+            The page must resize automatically for proper viewing on a variety of devices, such as desktop
+            computers, mobile phones and tablets.
+            The text “Ben Smith” must appear on the same line without splitting around the other HTML elements.
+            How should you complete the markup? To answer, drag the appropriate values to the correct targets. Each
+            value may be used once, more than once, or not at all. You may need to drag the split bar between panes
+            or scroll to view content.
+            NOTE: Each correct selection is worth one point.
+            </pre>            
+        </p>
+        <p>
+<xmp>
+<div style="RELLENAR CON CONTENIDO 1">
+  <span>
+      Customer name
+      <q style="RELLENAR CON CONTENIDO 2">Ben Smith</q>
+  </span>
+</div>
+
+VALUES:
+box-sizing: border-box  SOLUCION    ver: https://www.w3schools.com/css/css3_box-sizing.asp          (solo es manera de calcular el alto y ancho)
+display: block                      ver: https://www.w3schools.com/CSSref/pr_class_display.asp      (en bloque)
+display: flex                                                                                       (en bloque)
+display: inline   SOLUCION                                                                          (en línea)
+empty-cell: hide                    ver: https://www.w3schools.com/cssref/pr_tab_empty-cells.asp    (solo para tablas)
+flex-wrap: wrap                     ver: https://www.w3schools.com/cssref/css3_pr_flex-wrap.asp     (ajuste de elementos flexibles)
+</xmp>
+        </p>
+    </article>
+    <section>
+        <hr>
+        ESTE ES EL RESULTADO CON LA SOLUCION INDICADA: Si se hace F12 y aplicamos emulacion personalizada, con resolucion personalizada de 200x200 aprox, 
+        el nombre/apellido se separa en dos lineas: <br><br>
+        <div style="box-sizing:border-box;">
+            <span>
+                Customer name
+                <q style="display:inline;">Ben Smith</q>
+            </span>
+          </div>
+        
+        <hr>
+
+    </section>
+
+    <article>
+        <p>
+        <pre>
+            Section: Volume D
+            Explanation/Reference:
+            Box 1: box-sizing: border-box
+            Box 2: display: inline
+            Reference: https://www.w3schools.com/CSSref/pr_class_display.asp
+        </pre>
+        </p>
+    </article>
+</body>
+
+</html>

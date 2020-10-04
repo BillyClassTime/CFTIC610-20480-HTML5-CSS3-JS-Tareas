@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTION 173</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+</head>
+
+<body>
+    <article>
+        <p>You develop an HTML5 webpage. You have the following JavaScript code. (Line numbers are included for
+            reference only.)
+        </p>
+        <p>
+            <xmp>
+                $(document).ready(function() {
+                        LINEA 2 A RELLENAR
+                        e.preventDefault();
+                        ...
+                    });
+                });
+                
+You need to handle the click event when a user clicks the showDialog button.
+Which code segment should you insert at line 02?
+A. $(document).trigger("click", "#showDialog", function (e) {
+B. $(document).on ("#showDialog", "click", function (e) {
+C. $(document).toggle("click", "#showDialog", function (e) {
+D. $(document).on("click", "#showDialog", function (e) {
+            </xmp>
+        </p>
+    </article>
+    <section>
+        <form>
+            <p>Pulsar en los siguientes botones para ver la respuesta correcta:</p>
+            <input id="showDialogA" type="button" value="showDialog A" />
+            <input id="showDialogB" type="button" value="showDialog B" />
+            <input id="showDialogC" type="button" value="showDialog C" />
+            <input id="showDialogD" type="button" value="showDialog D" />
+        </form>
+        <script>
+                $(document).ready(function() {
+                        //LINEA 2 A RELLENAR
+                        try {
+                            $(document).trigger("click", "#showDialogA", function (e) {
+                                alert("A es la respuesta correcta");
+                                e.preventDefault();
+                            });
+                        } catch(miError) {
+                            alert("error en la respuesta A");
+                        };
+                        try {
+                            $(document).on ("#showDialogB", "click", function (e) {
+                                alert("B es la respuesta correcta");
+                                e.preventDefault();
+                            });
+                        } catch(miError) {
+                            alert("error en la respuesta B");
+                        };
+                        try {
+                            $(document).toggle("click", "#showDialogC", function (e) {
+                                alert("C es la respuesta correcta");
+                                e.preventDefault();
+                            });
+                        } catch(miError) {
+                            alert("error en la respuesta C");
+                        };
+                        try {
+                            $(document).on("click", "#showDialogD", function (e) {
+                                alert("D es la respuesta correcta");
+                                e.preventDefault();
+                            });
+                        } catch(miError) {
+                            alert("error en la respuesta D");
+                        };
+                });
+
+        </script>
+    </section>
+
+    <article>
+        <p>
+        <pre>
+            Correct Answer: D
+            Section: Volume D
+            Explanation/Reference:
+            Syntax: .on( events [, selector ] [, data ], handler )
+            * Example:
+            $(function() {
+            $(document).on('click', '.get-widgets', function (e) {
+            Reference: https://api.jquery.com/on/
+        </pre>
+        </p>
+    </article>
+</body>
+
+</html>
