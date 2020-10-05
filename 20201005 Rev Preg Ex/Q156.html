@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTION 20</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+    <article>
+        <p>
+        <h1>APLICA DIRECTAMENTE LA TEORIA</h1>
+        <H2>Más adelante se le puede dar una segunda vuelta y crear el JS para comprobar el correcto funcionamiento del web worker.</H2>
+        <pre>
+You develop an HTML5 application. The application uses an image that is returned from an HTTP POST request.
+You develop the following code: (Line numbers are included for reference only.)
+<xmp>
+var xhr = new XMLHttpRequest();
+xhr.open('POST', '/Images/heroAccent.png', true');
+var img = document.createElement('img');
+// PONER AQUI LA RESPUESTA ESCOGIDA
+xhr.send();
+</xmp>
+
+You need to display the loaded image in the application.
+Which code segment should you insert at line 04?
+
+<xmp>
+A.
+    xhr.responseType = 'blob';
+    xhr.onload = function (e) {
+        if (this.status == 200) {
+            img.src = window.URL.createObjectURL(this.responseText);
+            document.body.appendChild(img);
+        }
+    }
+
+B.
+    xhr.responseType = 'blob';
+    xhr.onload = function (e) {
+        if (this.status == 200) {
+            img.src = window.URL.createObjectURL(this.response);
+            document.body.appendChild(img);
+        }
+    }
+
+C.
+    xhr.responseType = 'document';
+    xhr.onload = function (e) {
+        if (this.status == 200) {
+            img.src = window.URL.createObjectURL(this.responseText);
+            document.body.appendChild(img);
+        }
+    }
+
+D.
+    xhr.responseType = 'document';
+    xhr.onload = function (e) {
+        if (this.status == 200) {
+            img.src = window.URL.createObjectURL(this.response);
+            document.body.appendChild(img);
+        }
+    }
+</xmp>
+       </pre>
+        </p>
+        <p>
+            <xmp>
+Correct Answer: B
+Section: Volume D
+Explanation
+Explanation/Reference:
+Explanation:
+As an image will be returned the response type must be blob, not document.
+Similarly, this.response must be used not this.responseText.
+Reference: https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL
+
+REVISION:
+¿ Para que sirve la propiedad XMLHttpRequest.responseType ? 
+    Ver: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseType
+    Es el tipo de respuesta que el navegador cliente espera que le llegue en le llamada.
+        blob -> The response is a Blob object containing the binary data.
+        document -> The response is an HTML Document or XML XMLDocument, as appropriate based on the MIME type of the received data.
+¿ Qué es realmente un blob en JS ? 
+    Ver: https://developer.mozilla.org/en-US/docs/Web/API/Blob
+¿ Qué hace URL.createObjectURL() ?
+    Ver: https://developer.mozilla.org/es/docs/Web/API/URL/createObjectURL
+        
+            </xmp>
+        </p>
+    </article>
+    <section>
+        <!--
+        <form>
+            <p>Pulsar en los siguientes botones para enviar mensajes al web worker:</p>
+            <input id="showDialogA" type="button" value="showDialog A" />
+            <input id="showDialogB" type="button" value="showDialog B" />
+            <input id="showDialogC" type="button" value="showDialog C" />
+            <input id="showDialogD" type="button" value="showDialog D" />
+        </form>
+        -->
+        <script>
+               /* $(document).ready(function() {
+                        //LINEA 2 A RELLENAR
+                        try {
+                            $(document).trigger("click", "#showDialogA", function (e) {
+                                alert("A es la respuesta correcta");
+                                e.preventDefault();
+                            });
+                        } catch(miError) {
+                            alert("error en la respuesta A");
+                        };
+                        try {
+                            $(document).on ("#showDialogB", "click", function (e) {
+                                alert("B es la respuesta correcta");
+                                e.preventDefault();
+                            });
+                        } catch(miError) {
+                            alert("error en la respuesta B");
+                        };
+                        try {
+                            $(document).toggle("click", "#showDialogC", function (e) {
+                                alert("C es la respuesta correcta");
+                                e.preventDefault();
+                            });
+                        } catch(miError) {
+                            alert("error en la respuesta C");
+                        };
+                        try {
+                            $(document).on("click", "#showDialogD", function (e) {
+                                alert("D es la respuesta correcta");
+                                e.preventDefault();
+                            });
+                        } catch(miError) {
+                            alert("error en la respuesta D");
+                        };
+                });
+*/
+        </script>
+    </section>
+</body>
+
+</html>

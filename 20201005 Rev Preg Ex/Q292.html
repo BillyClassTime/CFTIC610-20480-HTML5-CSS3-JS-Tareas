@@ -47,13 +47,19 @@ flex-wrap: wrap                     ver: https://www.w3schools.com/cssref/css3_p
         <hr>
         ESTE ES EL RESULTADO CON LA SOLUCION INDICADA: Si se hace F12 y aplicamos emulacion personalizada, con resolucion personalizada de 200x200 aprox, 
         el nombre/apellido se separa en dos lineas: <br><br>
-        <div style="box-sizing:border-box;">
-            <span>
-                Customer name
-                <q style="display:inline;">Ben Smith</q>
-            </span>
-          </div>
-        
+        <hr>
+        <!-- <div style="box-sizing: border-box"> --> <!-- Solucion -->
+        <!-- <div style=""> --> <!-- Con nada se ve igual a la solucion -->
+            <!-- <div style="display: flex"> --> <!-- Pruebas -->
+            <div style="box-sizing: border-box">
+                <span>
+                    Customer name
+                    <!-- <q style="display:inline;">Ben Smith</q> --> <!-- Solucion -->
+                    <!-- <q style="">Ben Smith</q> --> <!-- Con nada se ve igual a la solucion -->
+                    <!-- <q style="flex-wrap: wrap">Ben Smith</q> --> <!-- Pruebas -->
+                    <q style="display:inline;">Ben Smith</q>
+                </span>
+            </div>
         <hr>
 
     </section>

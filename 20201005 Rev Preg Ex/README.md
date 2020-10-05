@@ -7,4 +7,4 @@
 5. **Detalles de la entrega:**
    1. **Proyectos en ficheros HTML: Qnnn** siendo nnn el número de la pregunta tratado. 
    
-Pendientes: 275	258	241	224	207	190   156	139	122	105	88	71	54	37	20
+Pendientes: 275	258	241	224	207	190   139	122	105	88	71	54	37

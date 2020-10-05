@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTION 20</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+    <article>
+        <p>
+        <h1>APLICA DIRECTAMENTE LA TEORIA</h1>
+        <H2>Más adelante se le puede dar una segunda vuelta y crear el JS para comprobar el correcto funcionamiento del web worker.</H2>
+        <pre>
+            DRAG DROP
+            You are creating a web worker for an HTML5 application.
+            The following tasks must be performed from within the web worker:
+            · Register an event listener for the web worker
+            · Start and stop the web worker
+            You need to define a function that performs the required tasks.
+            Which line of code should you use? To answer, drag the appropriate lines of code to the correct targets.
+            Each line of code may be used once, more than once, or not at all. You may need to drag the split bar
+            between panes or scroll to view content.
+            NOTE: Each correct selection is worth one point.
+        </pre>
+        </p>
+        <p>
+            <xmp>
+A. self.postMessage('Worker: ' + data);                  SOLUCION EN POSICION 2ª
+B. self.addEventListener('message', function(event));    SOLUCION EN POSICION 1ª, pero debería acabar en ...event){
+C. self.attachEvent('Worker: ', data);  
+D. self.terminate();
+E. self.close();                                         SOLUCION EN POSICION 3ª
+
+// PRIMER LUGAR PARA PONER RESPUESTAS
+{
+    var data = event.data;
+    switch(data.cmd) {
+        case 'start':
+            // SEGUNDO LUGAR PARA PONER RESPUESTAS
+            break;
+        case 'stop':
+            // TERCER LUGAR PARA PONER RESPUESTAS
+            break;
+        default:
+            self.postMessage('Try again: ' + data.msg);
+    };
+}, false);
+            </xmp>
+        </p>
+    </article>
+    <section>
+        <!--
+        <form>
+            <p>Pulsar en los siguientes botones para enviar mensajes al web worker:</p>
+            <input id="showDialogA" type="button" value="showDialog A" />
+            <input id="showDialogB" type="button" value="showDialog B" />
+            <input id="showDialogC" type="button" value="showDialog C" />
+            <input id="showDialogD" type="button" value="showDialog D" />
+        </form>
+        -->
+        <script>
+               /* $(document).ready(function() {
+                        //LINEA 2 A RELLENAR
+                        try {
+                            $(document).trigger("click", "#showDialogA", function (e) {
+                                alert("A es la respuesta correcta");
+                                e.preventDefault();
+                            });
+                        } catch(miError) {
+                            alert("error en la respuesta A");
+                        };
+                        try {
+                            $(document).on ("#showDialogB", "click", function (e) {
+                                alert("B es la respuesta correcta");
+                                e.preventDefault();
+                            });
+                        } catch(miError) {
+                            alert("error en la respuesta B");
+                        };
+                        try {
+                            $(document).toggle("click", "#showDialogC", function (e) {
+                                alert("C es la respuesta correcta");
+                                e.preventDefault();
+                            });
+                        } catch(miError) {
+                            alert("error en la respuesta C");
+                        };
+                        try {
+                            $(document).on("click", "#showDialogD", function (e) {
+                                alert("D es la respuesta correcta");
+                                e.preventDefault();
+                            });
+                        } catch(miError) {
+                            alert("error en la respuesta D");
+                        };
+                });
+*/
+        </script>
+    </section>
+
+    <article>
+        <p>
+        <pre>
+            Section: Volume A
+            Explanation:
+            Box 1:
+            addEventListener
+            The addEventListener() method attaches an event handler to the specified element.
+            In context of a worker, both self and this refer to the global scope. The worker can eitheradd an event
+            listener for the message event, or it can define the onmessage handler to listen for any messages sent by
+            the parent thread.
+            Box 2:
+            postmessage
+            Pass a message to the worker.
+            Box 3:
+            close()
+            Terminating Workers
+            Workers are resource-intensive; they areOS-level threads. Therefore, you do no want to create a large
+            number of worker threads, and you should terminate the web worker after it completes its work. Workers
+            can terminate themselves, like this:
+            self.close();
+            Reference:
+            https://www.w3schools.com/jsref/met_document_addeventlistener.asp
+            https://www.html5rocks.com/en/tutorials/workers/basics/        
+        </pre>
+        </p>
+    </article>
+</body>
+
+</html>
