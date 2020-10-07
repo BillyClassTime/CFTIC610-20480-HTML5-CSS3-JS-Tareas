@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTION 139</title>
+</head>
+
+<body>
+    <article>
+        <p>
+            <pre>
+You implement a callback function by using JavaScript.
+You need to process the returned XML data.
+How should you complete the relevant code? To answer, select the appropriate options in the answer area.
+NOTE: Each correct selection is worth one point.
+</pre>
+        </p>
+        <p>
+            <xmp>
+<script>
+    function getStatus(url, readyFn) {
+        var httpRequest = new XMLHttpRequest();
+        httpRequest.onreadystatechange = function() {
+            if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+                // AQUI VA LA PRIMERA RESPUESTA
+            }
+        };
+        httpRequest.open('GET', url);
+        httpRequest.send();
+    }
+    function start(url) {
+        getStatus(url, function() {
+            // AQUI VA LA SEGUNDA RESPUESTA
+        });
+    }
+</script>
+// ALTERNATIVAS PARA LA PRIMERA RESPUESTA
+readyFn.call(httpRequest);
+httpRequest.setRequestHeader();
+readyFn.call(httpRequest.responseXML);
+readyFn=httpRequest.getResponseHeader();
+
+// ALTERNATIVAS PARA LA SEGUNDA RESPUESTA
+processResults(this);
+processResults(url.readyFn);
+processResults(this.XMLHttpRequest());
+processResults(url.callback.responseXML);
+</xmp>
+        </p>
+    </article>
+    <section>
+        <form>
+            <p>Pulsar en los siguientes botones para ver la respuesta correcta (accederemos a la API https://gorest.co.in/public-api/users.xml):</p>
+            <pre>
+            Solucion propuesta en PDF
+                1ª -> readyFn.call(httpRequest.responseXML);
+                2ª -> processResults(this);
+            </pre>
+            <input type="button" onclick="startSolucion('https://gorest.co.in/public-api/users.xml')" value="Solucion propuesta en PDF" />
+            <br>
+            <p><pre>
+            Alternativa posible (no cumple "You need to process the returned XML data."):  
+                1ª -> readyFn.call(httpRequest);
+                2ª -> processResults(this);
+            <input type="button" onclick="startAlternativa('https://gorest.co.in/public-api/users.xml')" value="Alternativa" />
+        </pre></p>
+        </form>
+
+        <script>
+    // INICIO VERSION CON LA SOLUCION QUE APARECE EN EXAMENES
+    function getStatusSolucion(url, readyFn) {
+        var httpRequest = new XMLHttpRequest();
+        httpRequest.onreadystatechange = function() {
+            if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+                // AQUI VA LA PRIMERA RESPUESTA
+                readyFn.call(httpRequest.responseXML);
+            }
+        };
+        httpRequest.responseType="xml";
+        httpRequest.open('GET', url);
+        httpRequest.send();
+    }
+    function startSolucion(url) {
+        getStatusSolucion(url, function() {
+            // AQUI VA LA SEGUNDA RESPUESTA
+            processResultsSolucion(this);
+        });
+    }
+    function processResultsSolucion(objeto) {
+        var oSerializer = new XMLSerializer();
+        var sXML = oSerializer.serializeToString(objeto);
+        alert("EL XML RECUPERADO ES: \n\n" + sXML);
+    }
+    // FIN VERSION CON LA SOLUCION QUE APARECE EN EXAMENES
+    // INICIO Alternativa posible (no cumple "You need to process the returned XML data."):  
+    function getStatusAlternativa(url, readyFn) {
+        var httpRequest = new XMLHttpRequest();
+        httpRequest.onreadystatechange = function() {
+            if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+                // AQUI VA LA PRIMERA RESPUESTA
+                readyFn.call(httpRequest);
+            }
+        };
+        httpRequest.responseType="xml";
+        httpRequest.open('GET', url);
+        httpRequest.send();
+    }
+    function startAlternativa(url) {
+        getStatusAlternativa(url, function() {
+            // AQUI VA LA SEGUNDA RESPUESTA
+            processResultsAlternativa(this);
+        });
+    }
+    function processResultsAlternativa(objeto) {
+        var oSerializer = new XMLSerializer();
+        var sXML = oSerializer.serializeToString(objeto.responseXML);
+        alert("EL XML RECUPERADO ES: \n\n" + sXML);
+    }
+    // FIN Alternativa posible (no cumple "You need to process the returned XML data."):  
+
+        </script>
+    </section>
+
+    <article>
+        <p>
+        <pre>
+            <hr>
+RESPUESTAS EN LA SOLUCION:
+1ª -> readyFn.call(httpRequest.responseXML);
+2ª -> processResults(this);
+
+            Section: Volume C
+            Explanation:
+            httpRequest.onreadystatechange = function() {
+            // inline function to check the status
+            // of our request
+            // this is called on every state change
+            if (httpRequest.readyState === 4 &&
+            httpRequest.status === 200) {
+            readyFn.call(httpRequest.responseXML);
+            // call the callback function
+            }
+            };
+            // call the function
+            some_function2("text.xml", function() {
+            console.log(this);
+            });
+            http://javascriptissexy.com/understand-javascript-callback-functions-and-use-them/
+
+        </pre>
+        </p>
+    </article>
+</body>
+
+</html>
