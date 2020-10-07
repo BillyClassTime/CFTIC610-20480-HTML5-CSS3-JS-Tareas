@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <h1>¿POSIBLE SOLUCION ERRONEA? </h1>
+    <h1>SOLUCION CON ERROR PARCIAL.</h1>
     <article>
         <p>
             <pre>
@@ -26,38 +26,41 @@
         </p>
         <p>
 <xmp>
-<div style="RELLENAR CON CONTENIDO 1">
+<!-- <div style="RELLENAR CON CONTENIDO 1">
   <span>
       Customer name
       <q style="RELLENAR CON CONTENIDO 2">Ben Smith</q>
   </span>
 </div>
-
+-->
 VALUES:
 box-sizing: border-box  SOLUCION    ver: https://www.w3schools.com/css/css3_box-sizing.asp          (solo es manera de calcular el alto y ancho)
 display: block                      ver: https://www.w3schools.com/CSSref/pr_class_display.asp      (en bloque)
 display: flex                                                                                       (en bloque)
-display: inline   SOLUCION                                                                          (en línea)
+display: inline   SOLUCION PARCIALMENTE ERRONEA: es mejor:  display: inline-block                   (en línea)
 empty-cell: hide                    ver: https://www.w3schools.com/cssref/pr_tab_empty-cells.asp    (solo para tablas)
 flex-wrap: wrap                     ver: https://www.w3schools.com/cssref/css3_pr_flex-wrap.asp     (ajuste de elementos flexibles)
+
+LA SOLUCION CORRECTA ES CON inline-block en lugar de inline.
+
 </xmp>
         </p>
     </article>
     <section>
         <hr>
         ESTE ES EL RESULTADO CON LA SOLUCION INDICADA: Si se hace F12 y aplicamos emulacion personalizada, con resolucion personalizada de 200x200 aprox, 
-        el nombre/apellido se separa en dos lineas: <br><br>
+        el nombre/apellido no se separará en dos lineas sino que siempre aparecerá junto, en la misma línea de "Customer name", o si no cabe en la línea siguiente: <br><br>
         <hr>
         <!-- <div style="box-sizing: border-box"> --> <!-- Solucion -->
         <!-- <div style=""> --> <!-- Con nada se ve igual a la solucion -->
-            <!-- <div style="display: flex"> --> <!-- Pruebas -->
-            <div style="box-sizing: border-box">
+            <!-- <div style="display: flex"> --> <!-- Pruebas   style=""    -->
+            <div style="box-sizing: border-box"> 
                 <span>
                     Customer name
                     <!-- <q style="display:inline;">Ben Smith</q> --> <!-- Solucion -->
                     <!-- <q style="">Ben Smith</q> --> <!-- Con nada se ve igual a la solucion -->
                     <!-- <q style="flex-wrap: wrap">Ben Smith</q> --> <!-- Pruebas -->
-                    <q style="display:inline;">Ben Smith</q>
+                <q style="display: inline-block">Ben Smith</q>
                 </span>
             </div>
         <hr>
