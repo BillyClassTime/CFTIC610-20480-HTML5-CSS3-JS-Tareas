@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTION 207</title>
+</head>
+
+<body>
+    <article>
+        <p>
+        <h1>QUESTION 207</h1>
+        <pre>
+You have the following code:
+var var1 = parseInt('12', 10);
+var var2 = parseInt('aaa', 10);
+var var3 = parseInt('12px', 10);
+var var4 = parseInt('foo2', 10);
+var var5 = parseInt('12a5', 10);
+You need to identify the correct value of each variable.
+Each value may be used once, more than once, or not at all. 
+
+Valores posibles de las respuestas:
+10
+12
+NaN
+        </pre>
+        </p>
+        <p>
+            <xmp>
+VAMOS A EJECUTAR EL JAVASCRIPT SIGUIENTE:
+var var1 = parseInt('12', 10);
+var var2 = parseInt('aaa', 10);
+var var3 = parseInt('12px', 10);
+var var4 = parseInt('foo2', 10);
+var var5 = parseInt('12a5', 10);
+
+LOS RESULTADOS DE LA EJECUCIÓN SON:</xmp>
+            <script>
+                var var1 = parseInt('12', 10);
+                var var2 = parseInt('aaa', 10);
+                var var3 = parseInt('12px', 10);
+                var var4 = parseInt('foo2', 10);
+                var var5 = parseInt('12a5', 10);              
+                document.write("<BR>var1=");
+                document.write(var1);
+                document.write("<br>var2=");
+                document.write(var2);
+                document.write("<br>var3=");
+                document.write(var3);
+                document.write("<br>var4=");
+                document.write(var4);
+                document.write("<br>var5=");
+                document.write(var5);
+            </script>
+        </p>
+    </article>
+
+    <article>
+        <p>
+        <pre>
+Las respuestas que aparecen en el PDF son:
+Correct answers:
+    12
+    NaN
+    12
+    NaN
+    12
+            
+Section: Volume D
+References:
+http://www.w3schools.com/jsref/jsref_parseint.asp     
+Revisar la referencia anterior pues queda claro.
+        </pre>
+        </p>
+    </article>
+</body>
+
+</html>
