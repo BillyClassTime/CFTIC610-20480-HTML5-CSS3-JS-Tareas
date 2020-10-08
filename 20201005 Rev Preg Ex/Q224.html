@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTION 224</title>
+</head>
+
+<body>
+    <article>
+        <p>
+        <h1>QUESTION 224</h1>
+        <pre>
+You develop the following code:
+
+var isBig = function(nb) {
+    if (nb > 10) 
+        return true;
+    else return false;
+}
+displayAlertIfBigNumber = function(aNumber) {
+    switch (TARGET 1) {
+        case TARGET 2:
+            alert("aNumber is big")
+            TARGET 3;
+        TARGET 4;
+            alert("aNumber is not big");
+            break
+    }
+}
+
+You need to complete the code to meet the following requirements:
+ - Display “aNumber is big” if aNumber is more than 10.
+ - Display “aNumber is not big” if aNumber is equal to or less than 10.
+How should you compete the code? Each code element may be used once, more than once, or not at all.
+CODE ELEMENTS A PONER EN TARGET 1 A 4:
+ - aNumber
+ - break
+ - default
+ - isBig(aNumber)
+ - true
+</pre>
+        </p>
+
+    <hr>
+    <p><pre>
+        SOLUCION en el pdf 
+
+TARGET 1 -> isBig(aNumber)
+TARGET 2 -> true
+TARGET 3 -> break
+TARGET 4 -> default
+
+Section: Volume D
+Explanation
+Explanation/Reference:
+Como es muy simple no dan explicaciones.
+
+Para comprobarlo es muy facil:
+<xmp>
+    Definimos este script, que es ligeramente diferente...
+    var isBig = function(nb) {
+        if (nb > 10) 
+            return true;
+        else return false;
+    }
+    displayAlertIfBigNumber = function(aNumber) {
+        switch (isBig(aNumber)) {
+            case true:
+                return "aNumber is big";
+                break;
+            default:
+                return "aNumber is not big";
+                break;
+        }
+    } 
+    document.write("... y ejecutamos las órdenes: <br>");
+    document.write("displayAlertIfBigNumber(7) : resultado= " + displayAlertIfBigNumber(7) + "<br>");
+    document.write("displayAlertIfBigNumber(12) : resultado= " + displayAlertIfBigNumber(12) + "<br>"); 
+</xmp>
+<script>
+    var isBig = function(nb) {
+        if (nb > 10) 
+            return true;
+        else return false;
+    }
+    displayAlertIfBigNumber = function(aNumber) {
+        switch (isBig(aNumber)) {
+            case true:
+                return "aNumber is big";
+                break;
+            default:
+                return "aNumber is not big";
+                break;
+        }
+    }  
+    document.write("... y ejecutamos las órdenes: <br>");
+    document.write("displayAlertIfBigNumber(7) : resultado= " + displayAlertIfBigNumber(7) + "<br>");
+    document.write("displayAlertIfBigNumber(12) : resultado= " + displayAlertIfBigNumber(12) + "<br>");
+</script>
+
+</pre></p>
+
+<script>
+
+</script>
+
+        <p>
+
+        </p>
+    </article>
+</body>
+
+</html>
