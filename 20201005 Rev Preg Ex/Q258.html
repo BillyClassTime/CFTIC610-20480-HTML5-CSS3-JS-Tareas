@@ -11,6 +11,7 @@
     <article>
         <p>
         <h1>QUESTION 258 --> OJO, ES DE C#</h1>
+        <h2>Se podría crear un proyecto para confirmar la solución, pero parece bastante claro.</h2>
         <pre>
 You have an application that uses paging. Each page displays five items from a list.
 You need to display the second page.
@@ -36,7 +37,9 @@ SOLUCION en el pdf
 2.      .Skip(5)
 3.      .Take(5)
 
-<b>OJO, a la vista de la web de la referencia, es posible que la solución correcta sea con 1. var page = items </b>
+<b>OJO, a la vista de la web de la referencia, la solución correcta debería ser con:
+     "1. var page = items" </b> y no con "1. int page = items" ya que a un entero ni se le 
+     pueden asignar items ni va a tener los métodos Take() Skip()... 
 
 Section: Volume B
 Explanation/Reference:
