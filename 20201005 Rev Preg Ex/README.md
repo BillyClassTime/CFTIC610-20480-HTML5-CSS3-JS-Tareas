@@ -8,4 +8,4 @@
    1. **Proyectos en ficheros HTML: Qnnn** siendo nnn el número de la pregunta tratado. 
    
 
-Pendientes: 241	190 	122	105	88	71	54	
+Pendientes: 190 	122	105	88	71	54	

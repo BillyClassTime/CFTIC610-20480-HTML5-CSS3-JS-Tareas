@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTION 241</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+    <article>
+        <p>
+        <h1>QUESTION 241: (TEÓRICA DE websockets y jQuery)</h1>
+        <pre>
+You develop an HTML5 webpage. You have the following HTML markup:
+
+Message: <input type="text" id="message" /> <br />
+<input type="button" id="postMessage" value="Post" onclick="postMessage();" />
+
+You also have the following Javascript code:
+
+var socket = new WebSocket("ws://myserver");
+
+You need to post messages by using the HTML5 WebSocket API.
+
+Which code segment should you use?
+
+A. socket.onmessage($("#message").val());
+B. socket.send($("#message").val());
+C. var msg = $("#message").val();
+   $.post(socket, function(msg){...});
+D. var msg = $("#message").val();
+   $.post(socket.onmessage, function(msg){...});
+
+A. Option A.
+B. Option B.
+C. Option C.
+D. Option D.
+</pre>
+        </p>
+        <p>
+        </p>
+    </article>
+    <section>
+        <hr>
+<p>A priori podemos pensar que onmessage es un callback que se ejecutará cuando llegue mensaje por el websocket, con lo que la descartamos,
+    la B tiene buena pinta por recuperar del campo, enviar por socket, la C y D tienen mala pinta por usar $.post que envía por HTTP normal sin 
+    hacer uso de websocket, con lo que también las descartaríamos. 
+    <br>OJO: han puesto dos pares de respuestas, parecidas cada par 1 a 1, aunque a simple vista, la C y la D parecen más parecidas que la A y B, y podriamos caer en el error de ir directos a C y D.
+</p>
+<h4>La teoría dice:</h4>
+<dl>
+    <dt><a href="https://api.jquery.com/jQuery.post/">https://api.jquery.com/jQuery.post/</a></dt>
+    <dd>Description: Send data to the server using a HTTP POST request. <br>$.post() : Sirve para realizar consultas POST por HTTP normal y no por websockets.</dd>
+    <dt><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onmessage">https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onmessage</a></dt>
+    <dd>The WebSocket.onmessage property is an EventHandler that is called when a message is received from the server. It is called with a MessageEvent.
+        <br>onmessage : Sirve para tratar los mensajes recibidos en el navegador.</dd>
+    <dt><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/send">https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/send</a></dt>
+    <dd>The WebSocket.send() method enqueues the specified data to be transmitted to the server over the WebSocket connection, increasing the value of 
+        bufferedAmount by the number of bytes needed to contain the data.
+        <br>socket.send() : correcto, sirve para enviar info.
+    </dd>
+</dl>
+
+<p>
+</p>
+
+    </section>
+
+    <article>
+        <p>
+        <pre>
+            <hr>
+<strong>SOLUCION EN EL PDF:</strong>
+Correct Answer: B
+Section: Volume D
+Explanation
+Explanation/Reference:
+<strong>Reference: https://www.tutorialspoint.com/html5/html5_websocket.htm</strong>
+        </pre>
+        </p>
+    </article>
+</body>
+
+</html>
