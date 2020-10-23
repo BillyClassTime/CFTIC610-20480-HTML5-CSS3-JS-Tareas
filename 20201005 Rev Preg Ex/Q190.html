@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTION 190</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+    <article>
+        <p>
+        <h1>QUESTION 190: (CSS3)</h1>
+        <pre>
+You are developing a page by using HTML and CSS3.
+You need the page to display two columns of text. The columns must resize automatically based on the size
+of the display, but each column must be at least 200px wide.
+Which CSS markup should you use?
+
+A. 
+article {
+    columns: 2
+    min-width: 200px;
+}
+
+B. 
+article {
+    column-count: 2;
+    column-width: 200px;
+}
+
+C.
+article {
+    column-count: 1;
+    min-width: 200px;
+    column-count: 2
+    min-width: 200px
+}
+
+D. 
+article {
+    columns: 2;
+    flex-basis: 200px
+}
+
+
+A. Option A.
+B. Option B.
+C. Option C.
+D. Option D.
+</pre>
+</p>
+</article>
+    <section>
+        <hr>
+<h4>Consultando la teoría:</h4>
+<dl>
+    <dt><a href="https://www.w3schools.com/css/css3_multiple_columns.asp">https://www.w3schools.com/css/css3_multiple_columns.asp</a></dt>
+        <dd>The column-count property specifies the number of columns an element should be divided into.
+            <br>The column-width property specifies a suggested, optimal width for the columns.
+            <br>The columns property is a shorthand property for column-width and column-count:
+<xmp>
+        div {
+            columns: 100px 3;
+          }
+</xmp>
+            No aparece min-width como estilo que aplique solo a columnas, 
+            sino que aplica directamente a un elemento, con lo que más bien aplicaría a article, que no es lo que se quiere.
+        </dd>    
+    <dt><a href="https://www.w3schools.com/cssref/css3_pr_flex-basis.asp">https://www.w3schools.com/cssref/css3_pr_flex-basis.asp</a></dt>
+        <dd>CSS flex-basis: Set the initial length of the flex-item.
+        </dd>
+</dl>
+
+<p>Por lo tanto nos podríamos decantar directamente por la respuesta B.
+</p>
+
+    </section>
+
+    <hr>
+<h4>Probando la alternativa A:</h4>
+Sin el punto y coma después de columns, directamente no muestra columnas. Entonces le pongo el punto y coma, sí las muestra, pero no respeta los 200px, es decir, 
+en caso de estrechar horizontalmente la ventana del navegador, reduce el ancho de la columna por debajo de 200px. (La alternativa es pasar a mostrar solo una columna).
+<br><br>
+<style>
+article#articulo1 {
+    columns: 2;
+    min-width: 200px;
+}
+</style>
+
+
+<article id="articulo1">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit purus sed suscipit sagittis. Donec vel laoreet tellus. Sed ut neque orci. Aliquam id lacus eu nibh vestibulum auctor. Proin luctus interdum tortor, at euismod sem luctus vel. Duis et nisl nunc. Aenean sem odio, egestas vulputate nunc sed, congue tristique odio. Phasellus metus quam, scelerisque in faucibus eu, lacinia vitae lectus. Sed vitae risus tellus. Praesent gravida, sapien quis mollis congue, est ante vehicula lectus, id lobortis risus nisi sit amet mi. Morbi a vulputate dolor.
+
+    In at lacus dapibus, consectetur nulla eget, consequat est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam tempor ante sed tristique dignissim. Nullam gravida ligula eget dolor fermentum fringilla non a libero. Sed ut lorem nec magna scelerisque vehicula. Mauris congue finibus eros a ullamcorper. Quisque sed velit scelerisque, lacinia est eu, vulputate magna. Nullam fringilla ex dolor, ac tempor dolor cursus id. Praesent tempor odio leo, finibus sagittis purus cursus in.
+ </article>
+
+<hr>
+<h4>Probando la alternativa B:</h4>
+Ok, en caso de estrechar horizontalmente la ventana del navegador por debajo de 200px se pasa de 2 a una columna.
+<br><br>
+<style>
+article#articulo2 {
+    column-count: 2;
+    column-width: 200px;
+}
+</style>
+
+
+<article id="articulo2">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit purus sed suscipit sagittis. Donec vel laoreet tellus. Sed ut neque orci. Aliquam id lacus eu nibh vestibulum auctor. Proin luctus interdum tortor, at euismod sem luctus vel. Duis et nisl nunc. Aenean sem odio, egestas vulputate nunc sed, congue tristique odio. Phasellus metus quam, scelerisque in faucibus eu, lacinia vitae lectus. Sed vitae risus tellus. Praesent gravida, sapien quis mollis congue, est ante vehicula lectus, id lobortis risus nisi sit amet mi. Morbi a vulputate dolor.
+
+    In at lacus dapibus, consectetur nulla eget, consequat est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam tempor ante sed tristique dignissim. Nullam gravida ligula eget dolor fermentum fringilla non a libero. Sed ut lorem nec magna scelerisque vehicula. Mauris congue finibus eros a ullamcorper. Quisque sed velit scelerisque, lacinia est eu, vulputate magna. Nullam fringilla ex dolor, ac tempor dolor cursus id. Praesent tempor odio leo, finibus sagittis purus cursus in.
+    
+ </article>
+
+
+ <hr>
+ <h4>Probando la alternativa C:</h4>
+ Sin el punto y coma al final de las lineas, directamente no muestra columnas. Entonces le pongo el punto y coma, sí las muestra, pero no respeta los 200px, es decir, 
+ en caso de estrechar horizontalmente la ventana del navegador, reduce el ancho de la columna por debajo de 200px. (La alternativa es pasar a mostrar solo una columna).
+ <br><br>
+ <style>
+ article#articulo3 {
+    column-count: 1;
+    min-width: 200px;
+    column-count: 2;
+    min-width: 200px;
+ }
+ </style>
+ 
+ 
+ <article id="articulo3">
+     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit purus sed suscipit sagittis. Donec vel laoreet tellus. Sed ut neque orci. Aliquam id lacus eu nibh vestibulum auctor. Proin luctus interdum tortor, at euismod sem luctus vel. Duis et nisl nunc. Aenean sem odio, egestas vulputate nunc sed, congue tristique odio. Phasellus metus quam, scelerisque in faucibus eu, lacinia vitae lectus. Sed vitae risus tellus. Praesent gravida, sapien quis mollis congue, est ante vehicula lectus, id lobortis risus nisi sit amet mi. Morbi a vulputate dolor.
+ 
+     In at lacus dapibus, consectetur nulla eget, consequat est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam tempor ante sed tristique dignissim. Nullam gravida ligula eget dolor fermentum fringilla non a libero. Sed ut lorem nec magna scelerisque vehicula. Mauris congue finibus eros a ullamcorper. Quisque sed velit scelerisque, lacinia est eu, vulputate magna. Nullam fringilla ex dolor, ac tempor dolor cursus id. Praesent tempor odio leo, finibus sagittis purus cursus in.
+     
+  </article>
+
+
+  <hr>
+  <h4>Probando la alternativa D:</h4>
+  Con y sin el punto y coma al final de las lineas, muestra dos columnas pero no respeta los 200px, es decir, 
+  en caso de estrechar horizontalmente la ventana del navegador, reduce el ancho de la columna por debajo de 200px. (La alternativa es pasar a mostrar solo una columna).
+  <br><br>
+  <style>
+  article#articulo4 {
+    columns: 2;
+    flex-basis: 200px;
+  }
+  </style>
+  
+  
+  <article id="articulo4">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit purus sed suscipit sagittis. Donec vel laoreet tellus. Sed ut neque orci. Aliquam id lacus eu nibh vestibulum auctor. Proin luctus interdum tortor, at euismod sem luctus vel. Duis et nisl nunc. Aenean sem odio, egestas vulputate nunc sed, congue tristique odio. Phasellus metus quam, scelerisque in faucibus eu, lacinia vitae lectus. Sed vitae risus tellus. Praesent gravida, sapien quis mollis congue, est ante vehicula lectus, id lobortis risus nisi sit amet mi. Morbi a vulputate dolor.
+  
+      In at lacus dapibus, consectetur nulla eget, consequat est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam tempor ante sed tristique dignissim. Nullam gravida ligula eget dolor fermentum fringilla non a libero. Sed ut lorem nec magna scelerisque vehicula. Mauris congue finibus eros a ullamcorper. Quisque sed velit scelerisque, lacinia est eu, vulputate magna. Nullam fringilla ex dolor, ac tempor dolor cursus id. Praesent tempor odio leo, finibus sagittis purus cursus in.
+      
+   </article>
+ 
+    <article>
+        <p>
+        <pre>
+            <hr>
+<strong>SOLUCION EN EL PDF:</strong>
+Correct Answer: B
+Section: Volume D
+Explanation
+Explanation/Reference:
+Explanation:
+Using both column-count and column-width is recommended to create a flexible multi-column layout. The
+column-count will act as the maximum number of columns, while the column-width will dictate the minimum
+width for each column. By pulling these properties together, the multi-column layout will automatically break
+down into a single column at narrow browser widths without the need of media queries or other rules.
+<strong>Reference: https://css-tricks.com/almanac/properties/c/columns/</strong>
+        </pre>
+        </p>
+    </article>
+</body>
+
+</html>
