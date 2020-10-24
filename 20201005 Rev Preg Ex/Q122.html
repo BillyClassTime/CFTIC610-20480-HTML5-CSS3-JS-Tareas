@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTION 122</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+    <article>
+        <p>
+        <h1>QUESTION 122: (HTML)</h1>
+
+You are developing a blog web page that is being optimized for accessibility. The page includes the
+following HTML.
+<br><br>
+&lt;body&gt;
+<xmp>
+    <h1>Blog Post Title</h1>
+    <h2>Subtitle</h2>
+    <h3>Authors Byline</h3>
+</xmp>
+&lt;/body&gt;
+<br><br>
+The heading tags represent a blog post title, a blog post subtitle, and the author's <br>
+You need to ensure that the three headings are treated as a unit but retain their individual formatting.<br>
+Which tags should you use to wrap the H1, H2, and H3 elements?<br>
+<xmp>
+A. <group> </group>
+B. <header> </header>
+C. <hgroup> </hgroup>
+D. <headings> </headings>
+</xmp>
+</article>
+<section>
+<hr>
+<h4>Consultando la teoría:</h4>
+<dl>
+    <dt>&lt;group&gt;</dt>
+        <dd>Posiblemente no sea un tag HTML.</dd>    
+    <dt><a href="https://www.w3schools.com/tags/tag_header.asp"></a>https://www.w3schools.com/tags/tag_header.asp</dt>
+        <dd>The &lt;header&gt; element represents a container for introductory content or a set of navigational links.</dd>    
+    <dt><a href="https://developer.mozilla.org/es/docs/Web/HTML/Elemento/hgroup">https://developer.mozilla.org/es/docs/Web/HTML/Elemento/hgroup</a></dt>
+        <dd>El elemento de grupo de cabeceras HTML (&lt;hgroup&gt;) representa el encabezado de una sección.
+             Define un solo título que participa de la estructura del documento como el encabezado de la sección implícita o explícita a la que pertenece.
+            <br>Su texto para el algoritmo de estructura es el texto del primer elemento de encabezado HTML de más alto rango
+             (ip.ej., el primer &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt; o &lt;h6&gt; con el número más pequeño entre sus descendientes) y el rango es el rango del mismo 
+                 elemento de encabezado HTML.
+            <br>Por tanto, este elemento agrupa varios encabezados, pero solo el primero contribuye a la estructura del documento. Permite asociar 
+                títulos secundarios, como subencabezados, títulos alternativos, e incluso lemas, con el encabezado principal, sin contaminar la estructura del documento.
+        </dd>
+    <dt>&lt;headings&gt;</dt>
+        <dd>Posiblemente no sea un tag HTML.</dd>      
+</dl>
+<p>Por lo tanto nos podríamos decantar directamente por la respuesta B.
+<br>No merece la pena dedicarle mucho tiempo por:<br><img src="./img/Q122.png" height=400 alt="">
+</p>
+</section>
+
+<hr>
+<h4>Probando la alternativa A:</h4>
+<group>
+    <h1>Blog Post Title</h1>
+    <h2>Subtitle</h2>
+    <h3>Authors Byline</h3><br><br>   
+</group>
+
+<hr>
+<h4>Probando la alternativa B:</h4>
+<header>
+    <h1>Blog Post Title</h1>
+    <h2>Subtitle</h2>
+    <h3>Authors Byline</h3><br><br>   
+</header>
+
+<hr>
+<h4>Probando la alternativa C:</h4>
+<hgroup>
+    <h1>Blog Post Title</h1>
+    <h2>Subtitle</h2>
+    <h3>Authors Byline</h3><br><br>   
+</hgroup>
+
+<hr>
+<h4>Probando la alternativa D:</h4>
+<headings>
+    <h1>Blog Post Title</h1>
+    <h2>Subtitle</h2>
+    <h3>Authors Byline</h3><br><br>   
+</headings>
+    <article>
+        <p>
+        <pre>
+            <hr>
+<strong>SOLUCION EN EL PDF:</strong>
+Correct Answer: C
+Section: Volume C
+Explanation
+Explanation/Reference:
+Explanation:
+The &lt;hgroup&gt; tag is used to group heading elements.
+The &lt;hgroup&gt; element is used to group a set of &lt;h1&gt; to &lt;h6&gt; elements, when a heading has multiple levels
+(subheadings).
+<strong>Reference: https://www.w3docs.com/learn-html/html-hgroup-tag.html</strong>
+        </pre>
+        </p>
+    </article>
+</body>
+
+</html>
