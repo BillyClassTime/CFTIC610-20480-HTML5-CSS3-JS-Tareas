@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTION 105</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+    <article>
+        <h1>QUESTION 105: (CSS Flexbox: posiblemente no entre en examen y esté obsoleto)</h1>
+        You are developing a web page.
+        The webpage must display a container. The container must display three colored rectangles near the top of
+        the container. The colored rectangles are, in order, green, red, and yellow. The rectangles are aligned
+        horizontally and evenly spaced across the width of the container.
+        The layout of the page must resemble the following image:
+        <br>
+        <img src="./img/Q105a.png" alt="">
+        <br>
+        You need to ensure that the page renders properly.
+        How should you complete the relevant styles? (To answer, select the appropriate option from each drop-
+        down list in the answer area.)
+        <br><img src="./img/Q105b.png" alt="">
+    </article>
+    <section>
+        <hr>
+        <h4>Consultando la teoría:</h4>
+        <dl>
+            <dt>-ms-flex-align</dt>
+            <dd>Es posible que sea una implementación antiguia de Flexbox en MSIE. Es posible que sea un alias de
+                align-items. Ver: <a href="https://caniuse.com/flexbox">https://caniuse.com/flexbox</a> <br>
+                En "Training for MTA Exam 98-375" se indica:
+                <blockquote>flex-align (start end center baseline stretch) Sets the default alignment for child boxes;
+                    if
+                    the orientation of the parent box is horizontal, flex-align determines the vertical alignment of the
+                    child boxes, and vice versa
+                    <br>flex-pack (start end center) Justifies the alignment of child boxes within
+                    a flexbox to ensure all whitespace in the
+                    parent box is filled
+                </blockquote>
+                Se dispone de ayuda contextual en MS CODE, pero no aparece la opcion flex-pack:stretch: <br>
+                <img src="./img/Q105c.png" alt="">
+                <img src="./img/Q105d.png" alt="">
+            </dd>
+        </dl>
+    </section>
+
+    <hr>
+    <h4>Probando la solucion propuesta:</h4>
+
+    Desisto después de unas cuantas pruebas por la sospecha de que sea obsoleto y no entre, además de que sería
+    necesario probar en MSIE.
+
+    <xmp>
+        -ms-flex-align: center; <br>
+        -ms-flex-pack: stretch;
+
+        <div class="box">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+        </div>
+
+        <style>
+            .box {
+                display: -ms-flexbox;
+                -ms-flex-direction: row;
+                -ms-flex-align: center;
+                -ms-flex-pack: stretch;
+                width: 550px;
+                height: 400px;
+            }
+        </style>
+
+    </xmp>
+
+    <article>
+        <p>
+        <pre>
+            <hr>
+<strong>SOLUCION EN EL PDF:</strong>
+Section: Volume C
+Explanation
+
+<img src="./img/Q105e.png" alt="">
+
+Explanation:
+* -ms-flex-align
+center: The flexbox item's margin box is centered in the cross axis within the line.
+* -ms-flex-pack
+The 'flex-pack' property defines the flexibility of these packing spaces.
+Reference: CSS property '-ms-flex-align'; CSS property '-ms-flex-pack'
+        </pre>
+        </p>
+    </article>
+</body>
+
+</html>
