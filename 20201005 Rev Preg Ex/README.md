@@ -11,4 +11,4 @@
    1. **Proyectos en ficheros HTML: Qnnn** siendo nnn el número de la pregunta tratado. 
 
 
-Pendientes:  71 	54	
+Pendientes:  54	
