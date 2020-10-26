@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTION 54</title>
+</head>
+
+<body>
+    <article>
+        <p>
+        <h1>QUESTION 54 (Javascript)</h1>
+        <pre>
+            You are creating a JavaScript function to display the current version of a web application
+            You declare a button as follows.
+            <xmp>
+            <input type="button" id="About" value="About" />
+            </xmp>
+            You need to create an event handler for the button by using an anonymous function.
+            Which code segment should you use?
+
+            <xmp>
+            A. var button = document.getElementById("About");
+            button.addEventListener('click', function { alert("Version 2.1.0")});
+            B. var button = document.getElementById("About");
+            button.addEventListener('click', function (alert("Version 2.1.0")));
+            C. var button = document.getElementById("About");
+            button.addEventListener('click', function () { alert("Version 2.1.0")});
+            D. var button = document.getElementById("About");
+            button.addEventListener('click', alert("Version 2.1.0"));
+            </xmp>
+        </pre>
+        </p>
+        <p>
+            <hr>
+        <h4>Probamos en 4 botones diferentes:</h4>
+        <input type="button" id="AboutA" value="A" />
+        <input type="button" id="AboutB" value="B" />
+        <input type="button" id="AboutC" value="C" />
+        <input type="button" id="AboutD" value="D" />
+        <script>
+            try {
+                var buttonA = document.getElementById("AboutA");
+                // Da error de sintaxis directamente, lo comento: buttonA.addEventListener('click', function { alert("Version 2.1.0 (a)") });
+            } catch (e) {
+                alert("Error de sintaxis en A");
+            }
+            try {
+                var buttonB = document.getElementById("AboutB");
+                // Da error de sintaxis directamente, lo comento: buttonB.addEventListener('click', function ( alert("Version 2.1.0 (b)")));
+            } catch (e) {
+                alert("Error de sintaxis en B");
+            }
+            try {
+                var buttonC = document.getElementById("AboutC");
+                buttonC.addEventListener('click', function () { alert("Version 2.1.0 (c)") });
+            } catch (e) {
+                alert("Error de sintaxis en C");
+            }
+            try {
+                var buttonD = document.getElementById("AboutD");
+                buttonD.addEventListener('click', alert("Version 2.1.0 (d)"));
+            } catch (e) {
+                alert("Error de sintaxis en D");
+            }
+        </script>
+        </p>
+    </article>
+    <hr>
+    <article>
+        <p>
+        <pre>
+La respuesta que aparece en el PDF es:
+
+orrect Answer: C
+Section: Volume B
+Explanation/Reference:
+Explanation:
+Example
+When passing parameter values, use an "anonymous function" that calls the specified function with
+theparameters:
+document.addEventListener("click", function() {
+myFunction(p1, p2);
+});
+References:
+https://www.w3schools.com/jsref/met_document_addeventlistener.asp
+
+        </pre>
+        </p>
+    </article>
+</body>
+
+</html>
