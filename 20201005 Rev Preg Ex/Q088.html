@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTION 88</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+    <article>
+        <h1>QUESTION 88: (CANVAS, HTML y JS)</h1>
+        <p>You troubleshoot a webpage that contains the following HTML element:</p>
+        <xmp>
+            <canvas id="clickCanvas" width="300"> height= "300">Your browser does not support the HTML5
+                canvas.</canvas>
+        </xmp>
+        <p>The following JavaScript code is included in a script tag in the HEAD section of the webpage: (Line
+            numbers are included for reference only.)</p>
+        <xmp>
+            var canvas;
+            var context;
+            window.onload = function initialize() {
+            canvas = document.getElementById('clickCanvas');
+            context = canvas.getContext('2d');
+            drawBox();
+            }
+            function clickReporter(e) {
+            alert('clicked');
+            }
+            function drawBox() {
+            context.fillStyle = 'black';
+            context.strokeRect(20, 20, canvas.width - 20, caanvas.height - 20);
+            }
+        </xmp>
+
+        <pre>
+        You need to invoke the clickReporter() JavaScript function when a user clicks the mouse on the canvas
+        HTML element.
+        What should you do?
+        A. Add the following attribute to the canvas HTML element:
+        clicked= "clickReporter()"
+        B. Replace the code segment at line 06 with the following code segment:
+        drawBox.Click += clickReporter;
+        C. Insert the following code segment at line 07:
+        canvas.onclick = clickReporter;
+        D. Insert the following code segment at line 07:
+        canvas, click = clickReporter;
+        </pre>
+
+    </article>
+    <section>
+        <hr>
+        <h4>Consultando la teoría:</h4>
+        Canvas -> evento clicked : no lo encuentro por internet.
+<!--        <dl>
+            <dt></dt>
+           <dd>. Ver: <a href="https://caniuse.com/flexbox">https://caniuse.com/flexbox</a> <br>
+                <blockquote>
+                </blockquote>
+                <br>
+            </dd>
+        </dl>
+        --> 
+    </section>
+
+    <hr>
+    <h4>Probando la solucion propuesta A: (comentar los JS de las otras soluciones)</h4><br>
+    <canvas id="clickCanvasA" width="300" height= "300" clicked="clickReporter()">Your browser does not support the
+        HTML5 canvas.</canvas><br>
+    <script>
+        // var canvas;
+        // var context;
+        // window.onload = function initialize() {
+        //     canvas = document.getElementById('clickCanvasA');
+        //     context = canvas.getContext('2d');
+        //     drawBox();
+        // }
+        // function clickReporter(e) {
+        //     alert('clicked');
+        // }
+        // function drawBox() {
+        //     context.fillStyle = 'black';
+        //     context.strokeRect(20, 20, canvas.width - 20, canvas.height - 20);
+        // }
+    </script>
+    No responde al click del ratón en el canvas ni aparecen errores en consola.
+
+    <hr>
+    <h4>Probando la solucion propuesta B: (comentar los JS de las otras soluciones)</h4><br>
+    <canvas id="clickCanvasB" width="300" height= "300">Your browser does not support the
+        HTML5 canvas.</canvas>
+    <script>
+        // var canvas;
+        // var context;
+        // window.onload = function initialize() {
+        //     canvas = document.getElementById('clickCanvasB');
+        //     context = canvas.getContext('2d');
+        //     drawBox.Click += clickReporter();  //drawBox();
+        // }
+        // function clickReporter(e) {
+        //     alert('clicked');
+        // }
+        // function drawBox() {
+        //     context.fillStyle = 'black';
+        //     context.strokeRect(20, 20, canvas.width - 20, canvas.height - 20);
+        // }
+    </script>
+    No sirve: ni se dibuja el rectangulo ni hace caso a click.
+
+    <hr>
+    <h4>Probando la solucion propuesta C: (comentar los JS de las otras soluciones)</h4><br>
+    <canvas id="clickCanvasC" width="300" height= "300">Your browser does not support the
+        HTML5 canvas.</canvas>
+    <script>
+        var canvas;
+        var context;
+        window.onload = function initialize() {
+            canvas = document.getElementById('clickCanvasC');
+            context = canvas.getContext('2d');
+            drawBox();
+            canvas.onclick = clickReporter;
+        }
+        function clickReporter(e) {
+            alert('clicked');
+        }
+        function drawBox() {
+            context.fillStyle = 'black';
+            context.strokeRect(20, 20, canvas.width - 20, canvas.height - 20);
+        }
+    </script>
+    ¡ ESTE SI QUE FUNCIONA !.
+
+    <h4>Sobre la solucion propuesta D: no la pruebo por tener error de sintaxis y haber visto que la C funciona.</h4><br>
+
+    <article>
+        <hr>
+        <p>
+        <pre>
+        <strong>SOLUCION EN EL PDF:</strong>
+        Correct Answer: A
+        Section: Volume B
+        Explanation
+        Explanation/Reference: 
+            NO SE PROPORCIONA EXPLICACIONES NI REFERENCIAS
+        </pre>
+        </p>
+    </article>
+</body>
+
+</html>
