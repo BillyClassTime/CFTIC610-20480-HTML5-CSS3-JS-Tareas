@@ -10,21 +10,7 @@
         <H1>SOLUCION 275 ERRONEA EN 2 de 3 respuestas</H1>
         <p>
             You have the following markup:
-            <xmp>
-                <style>
-                    div p.car {color: blue}
-                    #sidebar p {color: yellow}
-                    .Boat {color: red}
-                </style>
-            </xmp>
-            You need to identify in which color value will be displayed.
-            <xmp>
-                <div id="sidebar">
-                    <p class="car">Car</p>                  
-                    <p class="Boat">Boat</p>                
-                    <p style="color: violet">Plane</p>    
-                </div>
-            </xmp>
+
             <pre>
             Which color should you identify? To answer, select that appropriate options in the answer area.
 NOTE: Each correct selection is worth one point.
@@ -44,14 +30,16 @@ NOTE: Each correct selection is worth one point.
         <style>
             div p.car {color: blue}
             #sidebar p {color: yellow}
-            .Boat {color: red}
+            .Boat {color: red} 
         </style>
         Pero el navegador presenta amarillo / amarillo / violeta:
         <div id="sidebar"> 
             <p class="car">Car</p>                  
-            <p class="Boat">Boat</p>                
-            <p style="color: violet">Plane</p>    
+            <p id="Boat">Boat</p>                
+            <p style="color: violet">Plane</p>  
+           <!-- <p class="car">Otro</p> -->
         </div>
+        <p class="car">Otro2</p>
     </section>
 
     <article>
@@ -69,10 +57,13 @@ http://archives.molly.com/2005/10/06/css2-and-css21-specificity-clarified/
 OBSERVACION: 
 Lo interpreto como:
  - Plane es violeta porque el estilo inline en el propio elemento HTML es el que tiene máxima especificidad.
- - Los estilos "div p.car" y "#sidebar p" no llegan a los elementos Car y Boat por herencia, aunque la herencia esté incorporada al selector. Les llegaría por herencia si tuvieran el mismo color que su padre, pero no es el caso.
+ - FALSO Los estilos "div p.car" y "#sidebar p" no llegan a los elementos Car y Boat por herencia, 
+ aunque la herencia esté incorporada al selector. Les llegaría por herencia si tuvieran el mismo 
+ color que su padre, pero no es el caso.
  - El selector "div p.car" aplica directamente a Car.
  - El selector "#sidebar p" aplica directamente a Car y Boat.
- - Interpreto que "#sidebar p" tiene mayor especificidad que "div p.car" ya que #sidebar es un selector de tipo ID mientras que p.car tiene como mayor especificidad la de clase.
+ - Interpreto que "#sidebar p" tiene mayor especificidad que "div p.car" ya que #sidebar es un 
+ selector de tipo ID mientras que p.car tiene como mayor especificidad la de clase.
 
 </pre>
         </p>
